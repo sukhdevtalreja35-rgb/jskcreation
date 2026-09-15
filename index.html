@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSK Creation — Jewellery Making Raw Materials, Pakistan</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ivory:#FBF6EA;
+  --ivory-deep:#F1E6C9;
+  --paper:#FFFDF8;
+  --maroon:#6E1423;
+  --maroon-deep:#4A0D17;
+  --maroon-soft:#8C2233;
+  --gold:#B8842E;
+  --gold-light:#E7C878;
+  --gold-pale:#F3DFA9;
+  --green:#2E4A3B;
+  --green-deep:#1C2F26;
+  --ink:#2B1810;
+  --ink-soft:#6B5745;
+  --line:#E4D4AC;
+  --white:#FFFFFF;
+  --shadow: 0 8px 24px rgba(74,13,23,0.10);
+  --shadow-lg: 0 20px 50px rgba(74,13,23,0.18);
+  --radius: 14px;
+  --maxw: 1280px;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:'Mukta',sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  color:var(--maroon-deep);
+  margin:0;
+  letter-spacing:.01em;
+}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+.eyebrow{
+  font-family:'Mukta',sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--maroon);
+}
+.eyebrow::before{content:"◆ ";color:var(--gold);}
+:focus-visible{outline:2px solid var(--maroon);outline-offset:2px;}
+
+/* ============ HEADER ============ */
+header.site-header{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:60;
+  transition:box-shadow 0.45s ease;transition-timing-function:var(--ease);
+}
+header.site-header.is-scrolled{box-shadow:0 6px 22px rgba(74,13,23,.09);}
+.header-row{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:14px 28px;gap:16px;
+}
+.header-row .left-slot{display:flex;align-items:center;gap:10px;}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(21px,3vw,28px);font-weight:700;color:var(--maroon-deep);
+  min-width:0;justify-self:center;
+}
+.logo .logo-text{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.logo-mark{height:52px;width:auto;flex:none;display:block;}
+.logo small{display:block;font-family:'Mukta',sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft);font-weight:600;text-transform:uppercase;white-space:nowrap;}
+.header-actions{display:flex;align-items:center;gap:6px;flex:none;justify-self:end;}
+.icon-btn{
+  background:none;border:none;color:var(--maroon-deep);
+  display:flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;position:relative;
+  transition:background 0.25s;transition-timing-function:var(--ease);flex:none;
+}
+.icon-btn:hover{background:var(--ivory-deep);}
+.icon-btn svg{width:20px;height:20px;}
+.cart-count{
+  position:absolute;top:-2px;right:-2px;background:var(--maroon);color:#fff;
+  font-size:10.5px;font-weight:700;border-radius:50%;width:17px;height:17px;
+  display:flex;align-items:center;justify-content:center;border:1.5px solid var(--paper);
+}
+.search-box{
+  display:flex;align-items:center;gap:8px;background:var(--ivory-deep);
+  border-radius:30px;padding:0;max-width:0;overflow:hidden;transition:max-width 0.5s ease, padding 0.5s ease;transition-timing-function:var(--ease);
+}
+.search-box.open{max-width:240px;padding:0 6px 0 16px;}
+.search-box input{
+  border:none;background:none;outline:none;padding:9px 0;font-family:'Mukta',sans-serif;
+  font-size:14px;width:180px;color:var(--ink);
+}
+.search-box svg{width:16px;height:16px;color:var(--ink-soft);flex:none;}
+
+/* animated hamburger icon */
+.mobile-toggle{flex:none;}
+.mobile-toggle .hbg{width:20px;height:14px;position:relative;display:block;}
+.mobile-toggle .hbg span{
+  position:absolute;left:0;width:100%;height:2px;background:currentColor;border-radius:2px;
+  transition:transform 0.45s ease, opacity 0.35s ease, top 0.35s ease;transition-timing-function:var(--ease);
+}
+.mobile-toggle .hbg span:nth-child(1){top:0;}
+.mobile-toggle .hbg span:nth-child(2){top:6px;}
+.mobile-toggle .hbg span:nth-child(3){top:12px;}
+.mobile-toggle.active .hbg span:nth-child(1){top:6px;transform:rotate(45deg);}
+.mobile-toggle.active .hbg span:nth-child(2){opacity:0;}
+.mobile-toggle.active .hbg span:nth-child(3){top:6px;transform:rotate(-135deg);}
+
+/* mobile nav backdrop */
+.nav-overlay{
+  position:fixed;inset:0;background:rgba(43,24,16,.38);
+  opacity:0;visibility:hidden;transition:opacity 0.45s ease, visibility 0.45s ease;transition-timing-function:var(--ease);z-index:74;
+}
+.nav-overlay.open{opacity:1;visibility:visible;}
+
+/* ============ NAV / MEGA MENU ============ */
+nav.main-nav{background:var(--paper);border-bottom:1px solid var(--line);}
+.nav-row{display:flex;align-items:center;gap:2px;padding:0 28px;max-width:var(--maxw);margin:0 auto;position:relative;}
+.nav-item{position:relative;}
+.nav-link{
+  display:flex;align-items:center;gap:5px;color:var(--ink);
+  font-size:13.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+  padding:14px 16px;transition:color 0.25s, background 0.25s;transition-timing-function:var(--ease);
+}
+.nav-link:hover, .nav-link.active{color:var(--maroon);background:var(--ivory-deep);}
+.nav-link svg{width:12px;height:12px;transition:transform 0.35s;transition-timing-function:var(--ease);}
+.nav-item:hover .nav-link svg{transform:rotate(180deg);}
+.mega-panel{
+  position:absolute;left:0;top:100%;background:var(--paper);
+  border:1px solid var(--line);border-top:3px solid var(--gold);
+  box-shadow:var(--shadow-lg);border-radius:0 0 10px 10px;
+  padding:26px 30px;display:none;gap:26px 34px;width:max-content;max-width:92vw;
+  grid-template-columns:repeat(5, max-content);z-index:70;
+}
+.nav-item:hover .mega-panel, .nav-item:focus-within .mega-panel{display:grid;}
+.mega-panel-more{grid-template-columns:1fr;width:220px;padding:16px;}
+.mega-col h5{
+  font-family:'Mukta',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--maroon);margin-bottom:10px;display:flex;align-items:center;gap:6px;
+}
+.mega-col h5 .ic{width:15px;height:15px;color:var(--gold);flex:none;}
+.mega-col ul{list-style:none;margin:0;padding:0;}
+.mega-col li a{
+  display:block;padding:5px 0;font-size:13.5px;color:var(--ink-soft);
+  border-bottom:1px dashed transparent;transition:color 0.25s;transition-timing-function:var(--ease);
+}
+.mega-col li a:hover{color:var(--maroon);border-color:var(--gold-light);}
+.mega-view-all{grid-column:1/-1;border-top:1px dashed var(--line);padding-top:14px;margin-top:2px;text-align:center;}
+.mega-view-all a{
+  font-family:'Mukta',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--maroon);
+}
+.mega-view-all a:hover{color:var(--maroon-deep);}
+.mobile-toggle{display:none;background:none;border:none;color:var(--maroon-deep);padding:12px;}
+.mobile-toggle svg{width:22px;height:22px;}
+.nav-link{position:relative;}
+.nav-link::after{
+  content:"";position:absolute;left:16px;right:16px;bottom:6px;height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;transition-timing-function:var(--ease);
+}
+.nav-link:hover::after, .nav-link.active::after{transform:scaleX(1);}
+
+/* ============ HERO / PROMO BANNER ============ */
+.hero{position:relative;background:var(--paper);padding:0;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:40px;
+  font-size:14px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+  border:1.5px solid transparent;transition:transform 0.25s, box-shadow 0.25s, background 0.25s, color 0.25s;transition-timing-function:var(--ease);
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--maroon);color:#fff;box-shadow:0 10px 22px rgba(110,20,35,.28);}
+.btn-primary:hover{background:var(--maroon-deep);box-shadow:0 12px 26px rgba(110,20,35,.36);}
+.btn-outline{border-color:var(--maroon);color:var(--maroon);}
+.btn-outline:hover{background:var(--maroon);color:#fff;}
+.btn-gold{background:var(--gold);color:var(--maroon-deep);}
+.btn-gold:hover{background:var(--gold-light);}
+.btn[disabled]{opacity:.7;cursor:default;}
+
+/* full-bleed promo banner slider (signature element) */
+.hero-split{width:100%;}
+.hero-slider{position:relative;width:100%;height:480px;overflow:hidden;}
+.hero-slides{position:relative;width:100%;height:100%;}
+.hero-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity 1.15s ease;transition-timing-function:var(--ease);}
+.hero-slide.active{opacity:1;pointer-events:auto;}
+.slide-art{position:relative;width:100%;height:100%;}
+
+.promo-banner{position:relative;width:100%;height:100%;display:flex;align-items:center;overflow:hidden;background:var(--maroon-deep);}
+.promo-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;
+  transform:scale(1.045);transition:transform 7s linear;}
+.hero-slide.active .promo-photo{transform:scale(1.11);}
+.promo-scrim{position:absolute;inset:0;z-index:1;}
+.promo-1 .promo-scrim,.promo-2 .promo-scrim,.promo-3 .promo-scrim,.promo-4 .promo-scrim,
+.promo-5 .promo-scrim,.promo-6 .promo-scrim,.promo-7 .promo-scrim{
+  background:
+    radial-gradient(140px 110px at 94% 94%, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 72%),
+    linear-gradient(100deg, rgba(12,9,8,.86) 0%, rgba(12,9,8,.62) 26%, rgba(12,9,8,.22) 52%, rgba(12,9,8,.02) 74%);
+}
+
+.promo-frame{
+  position:absolute;inset:22px;border:1px solid rgba(255,255,255,.22);
+  pointer-events:none;z-index:2;
+}
+.promo-content{position:relative;z-index:3;max-width:640px;padding:0 6vw;}
+.promo-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;color:var(--gold-pale);
+  font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;margin-bottom:20px;
+}
+.promo-eyebrow::before{content:"";width:28px;height:1px;background:var(--gold-light);display:inline-block;}
+.promo-content h1{
+  font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;letter-spacing:.02em;
+  font-size:clamp(30px,4.6vw,56px);line-height:1.12;color:#fff;margin-bottom:20px;
+  text-shadow:0 4px 24px rgba(0,0,0,.25);
+}
+.promo-content h1 span{color:var(--gold-light);}
+.promo-content p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.78);max-width:420px;margin-bottom:30px;letter-spacing:.01em;}
+.promo-cta{
+  position:absolute;right:32px;bottom:32px;z-index:5;
+  display:inline-flex;align-items:center;gap:10px;color:#fff;background:none;border:none;
+  padding:4px 0;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);
+  transition:gap 0.3s var(--ease),color 0.3s var(--ease);
+}
+.promo-cta::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold-light);
+  transform:scaleX(.42);transform-origin:left;transition:transform 0.4s var(--ease);}
+.promo-cta svg{width:13px;height:13px;transition:transform 0.3s var(--ease);}
+.promo-cta:hover{color:var(--gold-light);gap:14px;}
+.promo-cta:hover::after{transform:scaleX(1);}
+
+.slide-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;
+  color:#fff;opacity:0;transition:opacity 0.35s, background 0.25s;transition-timing-function:var(--ease);z-index:6;backdrop-filter:blur(3px);
+}
+.slide-arrow svg{width:18px;height:18px;}
+.slide-arrow:hover{background:rgba(255,255,255,.28);}
+.hero-slider:hover .slide-arrow{opacity:1;}
+.slide-arrow.prev{left:20px;}
+.slide-arrow.next{right:20px;}
+.slide-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:6;}
+.slide-dot{width:20px;height:1.5px;border-radius:0;border:none;background:rgba(255,255,255,.38);cursor:pointer;transition:all 0.45s;transition-timing-function:var(--ease);padding:0;}
+.slide-dot.active{background:var(--gold-light);width:34px;}
+.breadcrumb-row{padding:14px 0;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+.breadcrumb-row .wrap{padding:0 28px;}
+.breadcrumb-row a{color:var(--maroon);font-weight:600;}
+@media (max-width:1080px){
+}
+@media (max-width:860px){
+  .hero-slider{height:380px;}
+  .promo-content p{display:none;}
+}
+@media (max-width:720px){
+  .hero-slider{height:320px;}
+  .promo-banner{flex-direction:column;align-items:stretch;justify-content:flex-end;padding-bottom:22px;}
+  .promo-content{padding:0 20px;max-width:100%;width:100%;position:relative;}
+  .promo-content h1{font-size:clamp(22px,7.2vw,30px);margin-bottom:8px;text-shadow:0 3px 14px rgba(0,0,0,.65),0 1px 3px rgba(0,0,0,.5);}
+  .promo-content p{display:none;}
+  .promo-eyebrow{margin-bottom:8px;font-size:10px;letter-spacing:.22em;gap:9px;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+  .promo-eyebrow::before{width:18px;}
+  .promo-cta{position:static;align-self:flex-end;margin:16px 20px 0 0;padding:4px 0;font-size:10px;letter-spacing:.16em;gap:8px;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+  .promo-cta svg{width:11px;height:11px;}
+  .promo-frame{display:none;}
+  .hero-slide[data-slide="2"] .promo-photo{object-position:28% center;}
+  /* wide banner photos crop hard on narrow screens; a lighter fade (backed by
+     text-shadow above, same idea as the desktop vignette) keeps more of the
+     photo visible while still keeping the text and button fully readable */
+  .promo-scrim{
+    background:
+      radial-gradient(280px 200px at 15% 100%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 75%),
+      linear-gradient(180deg, rgba(12,9,8,0) 0%, rgba(12,9,8,.02) 34%, rgba(12,9,8,.12) 48%, rgba(12,9,8,.38) 60%, rgba(12,9,8,.62) 72%, rgba(12,9,8,.80) 86%, rgba(12,9,8,.86) 100%) !important;
+  }
+}
+@media (max-width:480px){
+  .hero-slider{height:280px;}
+}
+
+/* ============ SECTION SHARED ============ */
+section{padding:56px 0;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;gap:20px;flex-wrap:wrap;}
+.section-head h2{font-size:clamp(26px,3vw,38px);font-style:italic;}
+.section-head p.sub{color:var(--ink-soft);margin-top:6px;font-size:14.5px;}
+.link-more{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--maroon);border-bottom:1.5px solid var(--gold);padding-bottom:2px;white-space:nowrap;}
+.link-more:hover{color:var(--maroon-deep);}
+
+/* ============ TRENDING SCROLL ============ */
+.trending-scroll{
+  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+  margin:0 -28px;width:calc(100% + 56px);padding:6px 20px 18px;
+}
+.trending-scroll::-webkit-scrollbar{height:6px;}
+.trending-scroll::-webkit-scrollbar-thumb{background:var(--gold-light);border-radius:6px;}
+.trend-tile{
+  flex:none;width:168px;scroll-snap-align:start;text-align:center;cursor:pointer;
+  position:relative;padding-top:12px;
+}
+.trend-tile .art{
+  width:168px;height:168px;border-radius:50%;position:relative;overflow:hidden;
+  border:3px solid var(--gold);box-shadow:var(--shadow);transition:transform 0.35s, box-shadow 0.35s;transition-timing-function:var(--ease);
+}
+.trend-tile:hover .art{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.trend-tile p{margin-top:12px;font-weight:600;font-size:14.5px;color:var(--maroon-deep);}
+.trend-tile .badge-tag{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);white-space:nowrap;
+  box-shadow:0 3px 8px rgba(74,13,23,.25);
+}
+
+/* ============ PRODUCT ART (reusable swatches) ============ */
+.product-art{
+  aspect-ratio:1/1;border-radius:var(--radius);position:relative;overflow:hidden;
+  background:linear-gradient(150deg, var(--base1), var(--base2));
+}
+.trend-tile .art{background:linear-gradient(150deg, var(--base1), var(--base2));}
+[data-art="cluster"]{
+  background-image:
+    radial-gradient(circle at 32% 32%, var(--c1) 0 15%, transparent 16%),
+    radial-gradient(circle at 32% 32%, var(--gold) 0 19%, transparent 20%),
+    radial-gradient(circle at 68% 26%, var(--c2) 0 11%, transparent 12%),
+    radial-gradient(circle at 68% 26%, var(--gold) 0 14.5%, transparent 15.5%),
+    radial-gradient(circle at 54% 60%, var(--c1) 0 18%, transparent 19%),
+    radial-gradient(circle at 54% 60%, var(--gold) 0 22.5%, transparent 23.5%),
+    radial-gradient(circle at 78% 68%, var(--c2) 0 9%, transparent 10%),
+    radial-gradient(circle at 78% 68%, var(--gold) 0 12%, transparent 13%),
+    radial-gradient(circle at 22% 76%, var(--c2) 0 8%, transparent 9%),
+    radial-gradient(circle at 22% 76%, var(--gold) 0 10.5%, transparent 11.5%),
+    linear-gradient(150deg, var(--base1), var(--base2));
+}
+[data-art="strand"]{
+  background-image:
+    radial-gradient(circle at 15% 50%, var(--c1) 0 8%, transparent 9%),
+    radial-gradient(circle at 15% 50%, var(--gold) 0 10.5%, transparent 11.5%),
+    radial-gradient(circle at 35% 38%, var(--c2) 0 8%, transparent 9%),
+    radial-gradient(circle at 35% 38%, var(--gold) 0 10.5%, transparent 11.5%),
+    radial-gradient(circle at 55% 58%, var(--c1) 0 8%, transparent 9%),
+    radial-gradient(circle at 55% 58%, var(--gold) 0 10.5%, transparent 11.5%),
+    radial-gradient(circle at 75% 40%, var(--c2) 0 8%, transparent 9%),
+    radial-gradient(circle at 75% 40%, var(--gold) 0 10.5%, transparent 11.5%),
+    radial-gradient(circle at 90% 58%, var(--c1) 0 7%, transparent 8%),
+    radial-gradient(circle at 90% 58%, var(--gold) 0 9.5%, transparent 10.5%),
+    linear-gradient(150deg, var(--base1), var(--base2));
+}
+[data-art="flat"]{
+  background-image:
+    radial-gradient(circle at 50% 46%, var(--c1) 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 46%, var(--gold) 0 34%, transparent 35%),
+    radial-gradient(circle at 50% 46%, transparent 0 21%, var(--c2) 22% 24%, transparent 25%),
+    linear-gradient(150deg, var(--base1), var(--base2));
+}
+.product-art::before{
+  content:"";position:absolute;left:50%;bottom:6%;width:72%;height:16%;
+  background:radial-gradient(ellipse at center, rgba(43,24,16,.30), transparent 72%);
+  transform:translateX(-50%);border-radius:50%;z-index:0;
+}
+.product-art::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg, rgba(255,255,255,.28), transparent 42%);
+}
+.badge-tag{
+  position:absolute;top:10px;left:10px;background:var(--maroon);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:4px 9px;border-radius:20px;z-index:2;
+}
+
+/* ---- redesigned card media / actions ---- */
+.card .card-media{position:relative;padding:8px;}
+.media-actions{
+  position:absolute;top:24px;right:24px;display:flex;flex-direction:column;gap:8px;
+  opacity:0;transform:translateX(8px);transition:opacity 0.35s, transform 0.35s;transition-timing-function:var(--ease);z-index:4;
+}
+.card:hover .media-actions{opacity:1;transform:translateX(0);}
+.media-btn{
+  width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);color:var(--maroon-deep);
+  transition:background 0.25s, color 0.25s, transform 0.25s;transition-timing-function:var(--ease);
+}
+.media-btn:hover{transform:scale(1.07);}
+.media-btn.wishlisted{background:var(--maroon);color:#fff;border-color:var(--maroon);}
+.media-btn svg{width:16px;height:16px;}
+.quick-view-btn{
+  position:absolute;left:50%;bottom:22px;transform:translate(-50%,10px);opacity:0;
+  background:var(--maroon-deep);color:#fff;padding:9px 20px;border-radius:30px;font-size:11.5px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;transition:opacity 0.35s, transform 0.35s;transition-timing-function:var(--ease);z-index:4;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;border:none;outline:none;
+}
+.quick-view-btn svg{width:13px;height:13px;}
+.card:hover .quick-view-btn{opacity:1;transform:translate(-50%,0);}
+.rating-row{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-soft);}
+.stars{display:flex;gap:1px;color:var(--gold);}
+.stars svg{width:12px;height:12px;}
+.card-name.clickable{cursor:pointer;transition:color 0.25s;transition-timing-function:var(--ease);}
+.card-name.clickable:hover{color:var(--maroon);}
+
+/* ============ SEASONAL BANNER ============ */
+.seasonal{background:linear-gradient(120deg, var(--maroon-deep), var(--maroon) 60%, var(--maroon-soft));color:var(--ivory);}
+.seasonal .banner-inner{
+  display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  padding:38px 40px;border-radius:20px;
+  background:radial-gradient(circle at 90% 10%, rgba(230,190,100,.18), transparent 55%);
+  border:1px solid rgba(231,200,120,.3);
+}
+.seasonal h2{color:#fff;font-size:clamp(24px,3vw,36px);font-style:italic;}
+.seasonal p{color:var(--gold-pale);margin-top:8px;max-width:420px;line-height:1.6;font-size:14.5px;}
+.seasonal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px;}
+
+/* ============ PRODUCT GRID / CARDS ============ */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:box-shadow 0.35s, transform 0.35s;transition-timing-function:var(--ease);
+  position:relative;
+}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+.card-body{padding:6px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--maroon-deep);line-height:1.25;min-height:auto;}
+.card-price{font-size:15px;font-weight:700;color:var(--ink);}
+.card-price .from{font-size:11px;color:var(--ink-soft);font-weight:500;text-transform:uppercase;letter-spacing:.04em;display:block;}
+.variant-control{margin-top:2px;}
+.variant-summary{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:9px 12px;border:1.3px solid var(--line);border-radius:9px;background:var(--ivory);
+  font-family:'Mukta',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);
+  cursor:pointer;transition:border-color 0.25s, background 0.25s;transition-timing-function:var(--ease);text-align:left;
+}
+.variant-summary:hover{border-color:var(--gold);}
+.variant-summary .chev{width:14px;height:14px;color:var(--ink-soft);flex:none;transition:transform 0.35s;transition-timing-function:var(--ease);}
+.variant-summary.open{border-color:var(--maroon);background:var(--paper);}
+.variant-summary.open .chev{transform:rotate(180deg);}
+.vsummary-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.variant-panel{
+  display:none;flex-direction:column;gap:10px;
+  padding:12px 12px 2px;margin-top:6px;border-top:1px dashed var(--line);
+}
+.variant-panel.open{display:flex;animation:panelIn .18s var(--ease-out);}
+@keyframes panelIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+.variant-group label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);font-weight:700;display:block;margin-bottom:6px;}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{
+  padding:6px 12px;border-radius:20px;border:1.3px solid var(--line);background:var(--paper);
+  font-family:'Mukta',sans-serif;font-size:11.5px;font-weight:600;color:var(--ink);cursor:pointer;
+  display:inline-flex;align-items:center;gap:5px;transition:all 0.25s;transition-timing-function:var(--ease);white-space:nowrap;
+  max-width:104px;overflow:hidden;text-overflow:ellipsis;
+}
+.chip:hover{border-color:var(--gold);}
+.chip.active{background:var(--maroon-deep);border-color:var(--maroon-deep);color:#fff;}
+.chip .dot{width:9px;height:9px;border-radius:50%;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.15);}
+.chip-more{
+  padding:6px 11px;border-radius:20px;border:1.3px dashed var(--line);background:none;
+  font-family:'Mukta',sans-serif;font-size:11.5px;font-weight:700;color:var(--ink-soft);cursor:pointer;
+}
+.chip-more:hover{border-color:var(--gold);color:var(--maroon);}
+.add-btn{
+  margin-top:10px;width:100%;padding:11px;border-radius:9px;border:none;
+  background:var(--maroon-deep);color:#fff;font-weight:600;font-size:13.5px;letter-spacing:.01em;
+  display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.25s, transform 0.2s;transition-timing-function:var(--ease);
+}
+.add-btn:hover{background:var(--maroon);}
+.add-btn:active{transform:scale(.98);}
+.add-btn .spinner{width:15px;height:15px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin2 .7s linear infinite;display:none;}
+.add-btn.loading .spinner{display:inline-block;}
+.add-btn.loading .lbl{display:none;}
+.add-btn .lbl{display:inline;}
+@keyframes spin2{to{transform:rotate(360deg);}}
+
+.load-more-wrap{text-align:center;margin-top:36px;}
+
+/* secondary banners */
+.dual-banners{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.dual-banner{
+  border-radius:18px;padding:34px;min-height:190px;display:flex;flex-direction:column;justify-content:center;gap:12px;position:relative;overflow:hidden;
+  border:1px solid var(--line);
+}
+.dual-banner.b1{background:linear-gradient(135deg, var(--ivory-deep), var(--gold-pale));}
+.dual-banner.b2{background:linear-gradient(135deg, #EFE6D8, var(--ivory-deep));}
+.dual-banner h3{font-size:26px;font-style:italic;}
+.dual-banner p{color:var(--ink-soft);font-size:14px;max-width:280px;}
+
+/* discovery tiles */
+.discover-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;}
+.discover-tile{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:0 0 16px;
+  text-align:center;transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s;transition-timing-function:var(--ease);overflow:hidden;
+}
+.discover-tile:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold);}
+.discover-tile .tile-art{border-radius:0;aspect-ratio:4/3;margin-bottom:14px;}
+.discover-tile .ic-wrap{
+  width:48px;height:48px;border-radius:50%;margin:-38px auto 12px;position:relative;z-index:2;
+  background:var(--paper);border:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);
+}
+.discover-tile .ic-wrap svg{width:22px;height:22px;color:var(--maroon-deep);}
+.discover-tile p{font-weight:600;font-size:13.5px;color:var(--maroon-deep);}
+
+/* trust badges */
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.trust-item{display:flex;align-items:center;gap:14px;padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px;}
+.trust-item .ic{
+  width:44px;height:44px;border-radius:50%;background:var(--green-deep);display:flex;align-items:center;justify-content:center;flex:none;
+}
+.trust-item .ic svg{width:22px;height:22px;color:var(--gold-light);}
+.trust-item h4{font-size:14.5px;color:var(--maroon-deep);}
+.trust-item p{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* newsletter */
+.newsletter{
+  background:linear-gradient(135deg, var(--green-deep), var(--green));
+  border-radius:22px;padding:46px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;color:#fff;
+}
+.newsletter h2{color:#fff;font-style:italic;font-size:clamp(22px,3vw,32px);}
+.newsletter p{color:#D9E6DC;font-size:14px;margin-top:6px;max-width:380px;}
+.newsletter-form{display:flex;gap:10px;flex-wrap:wrap;}
+.newsletter-form input{
+  padding:13px 18px;border-radius:30px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);
+  color:#fff;font-family:'Mukta',sans-serif;min-width:230px;
+}
+.newsletter-form input::placeholder{color:#cfe0d3;}
+
+/* ============ FOOTER ============ */
+footer{background:var(--maroon-deep);color:var(--gold-pale);margin-top:20px;}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;padding:56px 28px 30px;max-width:var(--maxw);margin:0 auto;
+}
+.footer-grid h5{color:var(--gold-light);font-family:'Mukta',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+.footer-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+.footer-grid ul a{font-size:13.5px;color:var(--gold-pale);opacity:.9;transition:opacity 0.25s;transition-timing-function:var(--ease);}
+.footer-grid ul a:hover{opacity:1;text-decoration:underline;}
+.footer-brand .logo{color:#fff;justify-self:start;}
+.footer-brand .logo-mark{height:58px;filter:brightness(0) invert(1) opacity(.95);}
+.footer-brand p{font-size:14px;line-height:1.75;color:#E9D6AE;margin:14px 0 0;max-width:320px;}
+.footer-contact p, .footer-hours p{font-size:14.5px;line-height:2;color:#fff;margin:0;}
+.footer-social{display:flex;gap:12px;margin-top:18px;}
+.footer-social a{
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(231,200,120,.4);
+  display:flex;align-items:center;justify-content:center;transition:background 0.25s;transition-timing-function:var(--ease);
+}
+.footer-social a:hover{background:rgba(231,200,120,.15);}
+.footer-social svg{width:16px;height:16px;}
+.footer-bottom{
+  border-top:1px solid rgba(231,200,120,.2);padding:18px 28px;display:flex;justify-content:space-between;
+  max-width:var(--maxw);margin:0 auto;font-size:12.5px;color:#CBAF7E;flex-wrap:wrap;gap:10px;
+}
+.footer-bottom a{color:#CBAF7E;text-decoration:underline;}
+.wa-float{
+  position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;
+  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:60;transition:transform .2s var(--ease);
+}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:26px;height:26px;}
+@media (max-width:640px){
+  .wa-float{right:16px;bottom:16px;width:46px;height:46px;}
+  .wa-float svg{width:22px;height:22px;}
+}
+.foot-admin-link{color:#8C7A56;opacity:.7;transition:opacity .25s ease;}
+.foot-admin-link:hover{opacity:1;color:#CBAF7E;}
+
+/* ============ CART DRAWER ============ */
+.overlay{
+  position:fixed;inset:0;background:rgba(43,24,16,.45);opacity:0;pointer-events:none;transition:opacity 0.45s;transition-timing-function:var(--ease);z-index:190;
+}
+.overlay.open{opacity:1;pointer-events:auto;}
+.cart-drawer{
+  position:fixed;top:0;right:0;height:100%;width:400px;max-width:92vw;background:var(--paper);
+  z-index:195;transform:translateX(100%);transition:transform 0.55s ease;transition-timing-function:var(--ease);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2);
+}
+.cart-drawer.open{transform:translateX(0);}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line);}
+.cart-head h3{font-size:22px;font-style:italic;}
+.cart-close{background:none;border:none;color:var(--ink);padding:6px;}
+.cart-close svg{width:20px;height:20px;}
+.cart-items{flex:1;overflow-y:auto;padding:14px 22px;display:flex;flex-direction:column;gap:16px;}
+.cart-empty{text-align:center;color:var(--ink-soft);padding:60px 20px;font-size:14px;}
+.cart-line{display:flex;gap:12px;padding-bottom:14px;border-bottom:1px dashed var(--line);}
+.cart-line .thumb{width:64px;height:64px;border-radius:10px;flex:none;}
+.cart-line .info{flex:1;}
+.cart-line .info h6{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--maroon-deep);font-weight:600;}
+.cart-line .info .meta{font-size:11.5px;color:var(--ink-soft);margin:3px 0 8px;}
+.qty-ctrl{display:flex;align-items:center;gap:10px;}
+.qty-ctrl button{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--ivory);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--maroon);}
+.qty-ctrl span{font-size:13.5px;font-weight:600;min-width:16px;text-align:center;}
+.line-price{font-weight:700;font-size:13.5px;color:var(--ink);white-space:nowrap;}
+.line-remove{background:none;border:none;color:var(--maroon);opacity:.6;padding:4px;}
+.line-remove:hover{opacity:1;}
+.line-remove svg{width:15px;height:15px;}
+.cart-foot{border-top:1px solid var(--line);padding:20px 22px;background:var(--ivory);}
+.cart-subtotal{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-bottom:14px;}
+.cart-foot .btn{width:100%;justify-content:center;margin-bottom:8px;}
+.cart-note{font-size:11.5px;color:var(--ink-soft);text-align:center;margin-top:6px;}
+
+/* ============ CHECKOUT — FULL PAGE ============ */
+.checkout-page{
+  position:fixed;inset:0;z-index:210;background:var(--paper);
+  opacity:0;pointer-events:none;transform:translateY(18px);
+  transition:opacity 0.5s ease, transform 0.5s ease;transition-timing-function:var(--ease);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.checkout-page.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.checkout-card{max-width:var(--maxw);margin:0 auto;padding:40px 28px 80px;}
+.checkout-title{font-size:34px;font-style:italic;color:var(--maroon-deep);margin-bottom:28px;}
+.checkout-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+.checkout-input{width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid var(--line);font-family:'Mukta',sans-serif;font-size:14.5px;background:var(--paper);}
+.checkout-input:focus{outline:none;border-color:var(--maroon);}
+.checkout-summary{background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:24px;position:sticky;top:96px;}
+.checkout-summary h3{font-size:18px;font-style:italic;color:var(--maroon-deep);margin-bottom:16px;}
+.checkout-summary-items{display:flex;flex-direction:column;gap:12px;max-height:340px;overflow-y:auto;}
+.checkout-line{display:flex;gap:10px;align-items:center;}
+.checkout-line .thumb{width:48px;height:48px;border-radius:8px;flex:none;}
+.checkout-line .info{flex:1;font-size:12.5px;}
+.checkout-line .info h6{font-family:'Cormorant Garamond',serif;font-size:14.5px;color:var(--maroon-deep);font-weight:600;}
+.checkout-line .info .meta{color:var(--ink-soft);font-size:11px;}
+.checkout-line .price{font-size:12.5px;font-weight:700;white-space:nowrap;}
+@media (max-width:860px){
+  .checkout-grid{grid-template-columns:1fr;}
+  .checkout-summary{position:static;}
+}
+
+/* ============ PRODUCT DETAIL — FULL PAGE ============ */
+.pdp-page{
+  position:fixed;inset:0;z-index:160;background:var(--paper);
+  opacity:0;pointer-events:none;transform:translateY(18px);
+  transition:opacity 0.5s ease, transform 0.5s ease;transition-timing-function:var(--ease);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.pdp-page.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.pdp-topbar{
+  position:sticky;top:0;z-index:6;background:var(--paper);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 28px;
+}
+.pdp-back{
+  display:inline-flex;align-items:center;gap:8px;background:none;border:none;
+  color:var(--maroon-deep);font-family:'Mukta',sans-serif;font-size:13.5px;font-weight:700;
+  letter-spacing:.03em;text-transform:uppercase;padding:8px 6px;
+}
+.pdp-back svg{width:18px;height:18px;}
+.pdp-back:hover{color:var(--maroon);}
+.pdp-topbar .logo{font-size:20px;}
+.pdp-card{max-width:var(--maxw);margin:0 auto;position:relative;}
+
+/* ============ ALL CATEGORIES — FULL PAGE ============ */
+.categories-page{
+  position:fixed;inset:0;z-index:158;background:var(--paper);
+  opacity:0;pointer-events:none;transform:translateY(18px);
+  transition:opacity 0.5s ease, transform 0.5s ease;transition-timing-function:var(--ease);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.categories-page.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.categories-card{max-width:var(--maxw);margin:0 auto;padding:40px 28px 80px;}
+.categories-groups{display:flex;flex-direction:column;gap:30px;margin-top:12px;}
+.cat-group{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+}
+.cat-group h5{
+  font-family:'Mukta',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--maroon-deep);margin-bottom:14px;display:flex;align-items:center;gap:7px;
+}
+.cat-group h5 .ic{width:16px;height:16px;color:var(--gold);flex:none;}
+/* chips size themselves to their own text — no stretched / equal-width cells */
+.cat-group-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.cat-chip{
+  display:inline-flex;align-items:center;width:fit-content;flex:none;white-space:nowrap;
+  padding:9px 16px;border-radius:22px;border:1px solid var(--line);background:var(--ivory);
+  font-family:'Mukta',sans-serif;font-size:13px;color:var(--ink-soft);
+  transition:background 0.25s, color 0.25s, border-color 0.25s;transition-timing-function:var(--ease);
+}
+.cat-chip:hover{border-color:var(--gold);background:var(--gold-pale);color:var(--maroon-deep);}
+.cat-chip.cat-chip-all{background:var(--maroon-deep);border-color:var(--maroon-deep);color:#fff;font-weight:700;}
+.cat-chip.cat-chip-all:hover{background:var(--maroon);border-color:var(--maroon);}
+@media (max-width:720px){
+  .categories-card{padding:26px 18px 60px;}
+  .cat-group{padding:16px 16px;}
+}
+.pdp-body{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0 28px;}
+.pdp-gallery{padding:36px 36px 36px 0;}
+.pdp-main-art{border-radius:16px;margin-bottom:14px;box-shadow:var(--shadow);aspect-ratio:1/1;}
+.pdp-thumbs{display:flex;gap:10px;}
+.pdp-thumb{width:64px;height:64px;border-radius:10px;cursor:pointer;border:2px solid transparent;overflow:hidden;flex:none;}
+.pdp-thumb.active{border-color:var(--maroon);}
+.pdp-thumb .product-art{border-radius:8px;}
+.pdp-info{padding:36px 0 24px 36px;border-left:1px solid var(--line);}
+.pdp-breadcrumb{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
+.pdp-breadcrumb a{color:var(--maroon);}
+.pdp-cat{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.pdp-info h2{font-size:34px;font-style:italic;margin:6px 0 10px;line-height:1.15;}
+.pdp-rating{margin-bottom:12px;}
+.pdp-price{font-size:25px;font-weight:700;color:var(--maroon-deep);margin:6px 0 16px;}
+.pdp-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:22px;max-width:520px;}
+.pdp-block{margin-bottom:18px;}
+.pdp-block label{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);font-weight:700;margin-bottom:9px;}
+.pill-row{display:flex;gap:9px;flex-wrap:wrap;}
+.pill{
+  padding:9px 18px;border-radius:30px;border:1.5px solid var(--line);font-size:13px;font-weight:600;
+  color:var(--ink);background:var(--ivory);transition:all 0.25s;transition-timing-function:var(--ease);
+}
+.pill:hover{border-color:var(--gold);}
+.pill.active{border-color:var(--maroon);background:var(--maroon);color:#fff;}
+.pdp-color-row{display:flex;gap:10px;}
+.pdp-color-row .color-dot{width:26px;height:26px;}
+.pdp-qty-row{display:flex;align-items:center;gap:18px;margin:22px 0 18px;flex-wrap:wrap;}
+.pdp-qty-row .qty-ctrl{gap:14px;}
+.pdp-qty-row .qty-ctrl button{width:32px;height:32px;font-size:16px;}
+.pdp-qty-row .qty-ctrl span{font-size:15px;}
+.pdp-add-btn{flex:0 1 auto;width:auto;min-width:170px;padding:14px 30px;}
+.pdp-meta-list{list-style:none;margin:20px 0 0;padding:18px 0 0;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--ink-soft);}
+.pdp-meta-list li strong{color:var(--ink);}
+.related-section{padding:36px 28px 60px;max-width:var(--maxw);margin:0 auto;}
+.related-section h4{font-size:22px;font-style:italic;margin-bottom:16px;color:var(--maroon-deep);}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+@media (max-width:760px){
+  .pdp-body{grid-template-columns:1fr;padding:0 20px;}
+  .pdp-gallery{padding:20px 0;}
+  .pdp-info{padding:8px 0 10px;border-left:none;border-top:1px solid var(--line);}
+  .pdp-topbar{padding:12px 20px;}
+  .related-section{padding:8px 20px 40px;}
+  .related-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+/* ============ TOASTS ============ */
+.toast-stack{position:fixed;bottom:22px;right:22px;z-index:200;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.toast{
+  background:var(--maroon-deep);color:#fff;padding:13px 18px;border-radius:10px;font-size:13.5px;font-weight:600;
+  box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:10px;min-width:220px;
+  animation:toastIn .25s var(--ease-out);
+}
+.toast.error{background:#7A2222;}
+.toast svg{width:16px;height:16px;flex:none;}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* mobile hero variant text swap */
+.mobile-only{display:none;}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1080px){
+  .product-grid{grid-template-columns:repeat(3,1fr);}
+  .discover-grid{grid-template-columns:repeat(3,1fr);}
+  .seasonal-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+  .footer-grid .col-track{display:none;}
+}
+@media (max-width:860px){
+  .mega-panel{grid-template-columns:repeat(3,1fr);width:94vw;left:50%;transform:translateX(-50%);}
+  .trust-row{grid-template-columns:repeat(2,1fr);}
+  .dual-banners{grid-template-columns:1fr;}
+}
+@media (max-width:720px){
+  .header-row{padding:12px 20px;}
+  .nav-row{display:none;}
+  .nav-row.open{
+    display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--paper);
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);
+    padding:8px 20px 22px;z-index:80;max-height:80vh;overflow-y:auto;
+    border-radius:0 0 14px 14px;
+    animation:navSlideIn .22s var(--ease-out);
+  }
+  .nav-row.open .nav-item{border-bottom:1px solid var(--line);}
+  .nav-row.open .nav-item:last-child{border-bottom:none;}
+  .nav-row.open .nav-link{padding:13px 4px;justify-content:space-between;}
+  .nav-link::after{display:none;}
+  .mobile-toggle{display:flex;}
+  .mega-panel{
+    position:static;display:none !important;box-shadow:none;border:none;
+    left:auto;top:auto;transform:none;
+    grid-template-columns:1fr;background:transparent;border-radius:0;gap:9px;
+    margin:10px 0 0;width:100%;padding:2px 2px 6px;text-align:left;
+    max-width:100%;
+  }
+  .mega-panel-more{
+    width:100%;grid-template-columns:1fr;padding:16px 20px;
+    background:var(--ivory-deep);border-radius:12px;text-align:center;
+  }
+  .mega-panel-more .mega-col li a{text-align:center;}
+  .nav-item.mobile-expanded .mega-panel{display:grid !important;}
+
+  /* ---- redesigned mobile "Shop By Category" accordion cards ---- */
+  .mega-panel .mega-col{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    overflow:hidden;margin:0 !important;padding:0;box-shadow:0 2px 8px rgba(74,13,23,.06);
+  }
+  .mega-panel .mega-col h5{
+    justify-content:space-between;margin:0;padding:14px 14px;font-size:12.5px;
+    background:var(--ivory-deep);color:var(--maroon-deep);cursor:pointer;user-select:none;
+  }
+  .mega-panel .mega-col h5::after{
+    content:"";width:7px;height:7px;border-right:2px solid var(--maroon);border-bottom:2px solid var(--maroon);
+    transform:rotate(45deg);transition:transform 0.35s ease;transition-timing-function:var(--ease);flex:none;margin-left:auto;
+  }
+  .mega-panel .mega-col.cat-open h5{background:var(--gold-pale);}
+  .mega-panel .mega-col.cat-open h5::after{transform:rotate(-135deg);}
+  .mega-panel .mega-col ul{
+    display:none;flex-wrap:wrap;gap:8px;padding:14px;background:var(--paper);
+  }
+  .mega-panel .mega-col.cat-open ul{display:flex;}
+  .mega-panel .mega-col li{list-style:none;}
+  .mega-panel .mega-col li a{
+    display:inline-block;padding:7px 13px;font-size:12px;text-align:left;
+    background:var(--ivory);border:1px solid var(--line);border-radius:20px;color:var(--ink-soft);
+    transition:background 0.25s, color 0.25s, border-color 0.25s;transition-timing-function:var(--ease);
+  }
+  .mega-panel .mega-col li a:active, .mega-panel .mega-col li a:focus-visible{
+    background:var(--gold-pale);border-color:var(--gold);color:var(--maroon-deep);
+  }
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+
+  /* ---- compact product card for mobile ---- */
+  .card .card-media{padding:8px;}
+  .badge-tag{font-size:10px;padding:3px 9px;top:6px;left:6px;}
+  .media-actions{top:14px;right:14px;}
+  .media-btn{width:28px;height:28px;}
+  .media-btn svg{width:13px;height:13px;}
+  .quick-view-btn{display:none;}
+  .card-body{padding:2px 10px 12px;gap:6px;}
+  .card-name{
+    font-size:16.5px;min-height:0;line-height:1.28;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .rating-row{font-size:11.5px;gap:5px;}
+  .stars svg{width:11px;height:11px;}
+  .card-price{display:flex;align-items:baseline;gap:6px;font-size:14.5px;}
+  .card-price .from{display:inline;font-size:10.5px;}
+  .variant-summary{padding:7px 11px;font-size:12px;}
+  .variant-summary .chev{width:13px;height:13px;}
+  .chip{font-size:11.5px;padding:6px 10px;max-width:86px;}
+  .chip-more{font-size:11.5px;padding:6px 9px;}
+  .add-btn{padding:10px;font-size:13px;margin-top:4px;gap:6px;}
+  .discover-grid{grid-template-columns:repeat(3,1fr);}
+  .seasonal-grid{grid-template-columns:repeat(2,1fr);}
+  .trust-row{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;padding-top:40px;}
+  .search-box.open{max-width:150px;}
+  .search-box input{width:100px;}
+  .desktop-only{display:none;}
+  .mobile-only{display:block;}
+}
+@keyframes navSlideIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+@media (max-width:480px){
+  .discover-grid{grid-template-columns:repeat(2,1fr);}
+  .product-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .seasonal-grid{grid-template-columns:1fr 1fr;}
+  .card .card-media{padding:6px;}
+  .card-body{padding:0 8px 10px;gap:5px;}
+  .card-name{font-size:15px;}
+  .rating-row span:last-child{display:none;}
+  .variant-summary{padding:6px 9px;}
+  .vsummary-text{font-size:11px;}
+  .cart-drawer{width:100vw;}
+  .trust-row{grid-template-columns:1fr;gap:12px;}
+  .trust-item{padding:14px;gap:12px;border-radius:12px;}
+  .trust-item .ic{width:38px;height:38px;}
+  .trust-item .ic svg{width:19px;height:19px;}
+  .trust-item h4{font-size:13.5px;}
+  .trust-item p{font-size:11.5px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .newsletter{padding:32px 22px;}
+  .header-row{padding:10px 16px;gap:8px;}
+  .logo{gap:8px;}
+  .logo small{display:none;}
+  .logo-mark{height:42px;}
+  .header-actions{gap:2px;}
+  .icon-btn{width:36px;height:36px;}
+  .search-box.open{max-width:130px;}
+  .search-box input{width:84px;font-size:13px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-row">
+    <div class="left-slot">
+      <button class="icon-btn mobile-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hbg"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <a href="#top" class="logo"><img src="logo-mark.png" alt="JSK Creation" class="logo-mark"></a>
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search Kundan, Moti, Wire…">
+      </div>
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" id="cartToggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="main-nav">
+    <div class="nav-row" id="navRow">
+      <div class="nav-item"><a href="#top" class="nav-link active">Home</a></div>
+
+      <div class="nav-item">
+        <a href="#categories" class="nav-link" id="shopByCategoryLink">Shop By Category
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="mega-panel" id="megaPanel"></div>
+      </div>
+
+      <div class="nav-item"><a href="#trending" class="nav-link">New Arrivals</a></div>
+      <div class="nav-item"><a href="#seasonal" class="nav-link">Pre-Booking</a></div>
+
+      <div class="nav-item">
+        <a href="#" class="nav-link">More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="mega-panel mega-panel-more" id="moreMegaPanel">
+          <div class="mega-col">
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO / PROMO BANNER ============ -->
+<section class="hero" id="top">
+  <div class="hero-split">
+  <div class="hero-slider" id="heroSlider" aria-label="Featured promotions">
+    <div class="hero-slides" id="heroSlides">
+
+      <div class="hero-slide active" data-slide="0">
+        <div class="slide-art promo-banner promo-5">
+          <img class="promo-photo" src="banner-raw-materials.jpg" alt="Kundan, meenakari and pearl jewellery raw materials laid out" loading="eager">
+          <div class="promo-scrim"></div>
+          <div class="promo-frame"></div>
+          <div class="promo-content">
+            <p class="promo-eyebrow">Raw Materials for Handmade Tradition</p>
+            <h1>Kundan, Moti<br><span>&amp; Raw Material</span></h1>
+            <p>From kundan settings and meenakari hexagons to pearl drops, gota and jadau stones — everything a karigar needs, sourced and ready to craft.</p>
+          </div>
+          <a href="#all-products" class="promo-cta">Discover the Collection<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-slide" data-slide="1">
+        <div class="slide-art promo-banner promo-6">
+          <img class="promo-photo" src="banner-kundan-meenakari.jpg" alt="Loose kundan and meenakari stone components" loading="lazy">
+          <div class="promo-scrim"></div>
+          <div class="promo-frame"></div>
+          <div class="promo-content">
+            <p class="promo-eyebrow">Kundan &amp; Meenakari Edit</p>
+            <h1>Loose Kundan<br><span>&amp; Meenakari Stones</span></h1>
+            <p>Hand-set kundan pieces and hexagonal meenakari beads in classic white and jewel tones — sold by the piece for necklaces, jhumkas and bridal sets.</p>
+          </div>
+          <a href="#all-products" class="promo-cta">Discover the Collection<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-slide" data-slide="2">
+        <div class="slide-art promo-banner promo-7">
+          <img class="promo-photo" src="banner-earring-sets.jpg" alt="Finished kundan and meenakari earring sets with pearl drops" loading="lazy">
+          <div class="promo-scrim"></div>
+          <div class="promo-frame"></div>
+          <div class="promo-content">
+            <p class="promo-eyebrow">Handcrafted Kundan Collection</p>
+            <h1>Kundan &amp; Meenakari<br><span>Earring Sets</span></h1>
+            <p>Lotus-cut kundan and emerald-green meenakari, finished with pearl drops — ready-made sets for retail or your own bridal line.</p>
+          </div>
+          <a href="#all-products" class="promo-cta">Discover the Collection<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+    <button class="slide-arrow prev" id="heroPrev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="slide-arrow next" id="heroNext" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="slide-dots" id="heroDots"></div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb-row">
+  <div class="wrap"><a href="#top">Home</a></div>
+</div>
+
+<!-- ============ TRENDING ============ -->
+<section id="trending">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Fresh in the Workshop</p>
+        <h2>Shop the Trending</h2>
+      </div>
+      <a href="#categories" class="link-more" id="viewAllCategoriesLink">View All Categories →</a>
+    </div>
+    <div class="trending-scroll" id="trendingScroll"></div>
+  </div>
+</section>
+
+<!-- ============ PRE-BOOKING ============ -->
+<section id="seasonal">
+  <div class="wrap">
+    <div class="banner-inner">
+      <div>
+        <p class="eyebrow" style="color:var(--gold-light)">Reserve In Advance</p>
+        <h2>Pre-Booking Collection</h2>
+        <p>New stock on its way — pre-book now and it ships to you in 2–4 weeks, no waiting around for a restock.</p>
+        <a href="#all-products" class="btn btn-gold" style="margin-top:18px;">Shop Pre-Booking →</a>
+      </div>
+    </div>
+    <div class="seasonal-grid" id="seasonalGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ALL PRODUCTS ============ -->
+<section id="all-products">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">The Full Collection</p>
+        <h2>All Products</h2>
+        <p class="sub">Pack sizes, colours and stone sizes update the price automatically — pick what your design needs.</p>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" id="loadMoreBtn">Load More Products</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECONDARY BANNERS ============ -->
+<section>
+  <div class="wrap">
+    <div class="dual-banners">
+      <div class="dual-banner b1">
+        <p class="eyebrow">Reserve Ahead</p>
+        <h3>Shop Pre-Booking Collection</h3>
+        <p>New arrivals not in stock yet — pre-book now and get first access as soon as they land.</p>
+        <a href="#seasonal" class="btn btn-primary" style="width:fit-content;">Browse Pre-Booking</a>
+      </div>
+      <div class="dual-banner b2">
+        <p class="eyebrow">Heritage Techniques</p>
+        <h3>Shop Traditional Collection</h3>
+        <p>Temple jewellery, Kolhapuri-style patch work and regional Panadi essentials.</p>
+        <a href="#all-products" class="btn btn-outline" style="width:fit-content;">Browse Traditional</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BADGES ============ -->
+<section>
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="trust-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
+        <div><h4>Nationwide Shipping</h4><p>Delivering across Pakistan</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div><h4>WhatsApp Support</h4><p>Order help, human replies</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h4>Damage-Safe Packaging</h4><p>Stones &amp; strands packed secure</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h4>Fast Dispatch (T+1)</h4><p>Orders leave next business day</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section>
+  <div class="wrap">
+    <div class="newsletter">
+      <div>
+        <h2>Never Miss a Restock</h2>
+        <p>New Kundan shades, festival kits, and wholesale offers — straight to your inbox or WhatsApp.</p>
+      </div>
+      <div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+        <a href="#" class="btn btn-outline" style="margin-top:10px;border-color:#fff;color:#fff;" id="waChannelBtn">Join WhatsApp Channel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo footer-logo"><img src="logo-mark.png" alt="JSK Creation" class="logo-mark"></a>
+      <p>Wholesale and retail jewellery making materials — beads, chains, findings, stones, wire and tools.</p>
+    </div>
+    <div class="footer-contact">
+      <h5>Contact</h5>
+      <p>WhatsApp: +92 305 2181963</p>
+      <p>orders@jskcreation.com</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/jsk_creation12/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="https://www.facebook.com/share/19FwcFP9Mv/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.5-1.5H16.5V4.3c-.27-.04-1.2-.1-2.28-.1-2.26 0-3.8 1.38-3.8 3.9V10.5H8v3h2.42V21h3.08z"/></svg></a>
+        <a href="https://www.tiktok.com/@jsk.creation" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.1 1.7 3.5 3.9 3.7v2.6c-1.4 0-2.7-.4-3.9-1.2v6.4c0 3.2-2.3 5.5-5.4 5.5-3 0-5.4-2.4-5.4-5.5s2.4-5.5 5.4-5.5c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.2-2.8 2.9s1.2 2.9 2.8 2.9c1.7 0 2.9-1.3 2.9-3V3h2.5z"/></svg></a>
+        <a href="https://wa.me/923052181963" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.06-1.33A10 10 0 1 0 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-hours">
+      <h5>Hours</h5>
+      <p>Mon–Sat: 10:00 – 19:00</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 JSK Creation. All rights reserved.</span>
+    <span>Orders are placed directly through our website. &middot; <a href="warehouse.html" class="foot-admin-link">Warehouse</a></span>
+  </div>
+</footer>
+
+<a href="https://wa.me/923052181963" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.06-1.33A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div id="cartView">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">Rs.0.00</span></div>
+      <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+      <button class="btn btn-outline" id="continueBtn">Continue Shopping</button>
+      <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ CHECKOUT — FULL PAGE ============ -->
+<div class="checkout-page" id="checkoutPage" role="region" aria-label="Checkout">
+  <div class="pdp-topbar">
+    <button class="pdp-back" id="checkoutBackBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to Cart
+    </button>
+    <div class="logo"><img src="logo-mark.png" alt="JSK Creation" class="logo-mark"></div>
+  </div>
+  <div class="checkout-card">
+    <h1 class="checkout-title">Checkout</h1>
+    <div class="checkout-grid">
+      <div class="checkout-form">
+        <p id="checkoutError" style="display:none;color:#B3261E;font-size:12.5px;font-weight:600;margin-bottom:16px;">Please fill in all required fields.</p>
+        <div class="pdp-block" style="margin:0 0 18px;">
+          <label>Full Name *</label>
+          <input id="custName" type="text" placeholder="Your name" class="checkout-input">
+        </div>
+        <div class="pdp-block" style="margin:0 0 18px;">
+          <label>Phone Number *</label>
+          <input id="custPhone" type="tel" placeholder="03XX-XXXXXXX" class="checkout-input">
+        </div>
+        <div class="pdp-block" style="margin:0 0 18px;">
+          <label>Address *</label>
+          <input id="custAddress" type="text" placeholder="House / street / area" class="checkout-input">
+        </div>
+        <div class="pdp-block" style="margin:0 0 18px;">
+          <label>City *</label>
+          <input id="custCity" type="text" placeholder="City" class="checkout-input">
+        </div>
+        <div class="pdp-block" style="margin:0;">
+          <label>Order Notes <em style="text-transform:none;font-weight:400;">(optional)</em></label>
+          <input id="custNotes" type="text" placeholder="Anything we should know?" class="checkout-input">
+        </div>
+      </div>
+      <div class="checkout-summary">
+        <h3>Order Summary</h3>
+        <div class="checkout-summary-items" id="checkoutItems"></div>
+        <div class="cart-subtotal" style="margin-top:16px;"><span>Total</span><span id="checkoutTotal">Rs.0.00</span></div>
+        <button class="btn btn-primary" id="placeOrderBtn" style="width:100%;justify-content:center;margin-top:16px;">Confirm Order</button>
+        <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRODUCT DETAIL — FULL PAGE ============ -->
+<div class="pdp-page" id="pdpPage" role="region" aria-label="Product details">
+  <div class="pdp-topbar">
+    <button class="pdp-back" id="pdpBackBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to Shop
+    </button>
+    <div class="logo"><img src="logo-mark.png" alt="JSK Creation" class="logo-mark"></div>
+  </div>
+  <div class="pdp-card" id="pdpCard"></div>
+</div>
+
+<!-- ============ ALL CATEGORIES — FULL PAGE ============ -->
+<div class="categories-page" id="categoriesPage" role="region" aria-label="All Categories">
+  <div class="pdp-topbar">
+    <button class="pdp-back" id="categoriesBackBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Back
+    </button>
+    <div class="logo"><img src="logo-mark.png" alt="JSK Creation" class="logo-mark"></div>
+  </div>
+  <div class="categories-card">
+    <p class="eyebrow">Browse the Full Range</p>
+    <h1 class="checkout-title">Shop By Category</h1>
+    <div class="categories-groups" id="categoriesGroups"></div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const ICONS = {
+  leaf:'<path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 9-9s9 4 9 9a7 7 0 0 1-7 7"/><path d="M11 20V4"/>',
+  bead:'<circle cx="7" cy="12" r="3"/><circle cx="14" cy="7" r="2"/><circle cx="17" cy="16" r="2.5"/>',
+  gem:'<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6-3 12M15 3l-3 6 3 12"/>',
+  diamond:'<path d="M12 2l4 4-4 16-4-16z"/><path d="M6 6h12"/>',
+  flower:'<circle cx="12" cy="12" r="2.5"/><path d="M12 2c1.5 2 1.5 4 0 6M12 22c1.5-2 1.5-4 0-6M2 12c2-1.5 4-1.5 6 0M22 12c-2 1.5-4 1.5-6 0M5 5c2 .5 3 1.7 3.5 3.7M19 5c-2 .5-3 1.7-3.5 3.7M5 19c2-.5 3-1.7 3.5-3.7M19 19c-2-.5-3-1.7-3.5-3.7"/>',
+  drop:'<path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/>',
+  chain:'<circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/>',
+  coil:'<path d="M3 12c0-3 2-5 4.5-5S12 9 12 12s2 5 4.5 5S21 15 21 12"/>',
+  tool:'<path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 1 1 5.4-5.4z"/>',
+  watch:'<circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 2M9 3h6M9 21h6"/>'
+};
+function ic(key,cls){return `<svg class="${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${ICONS[key]}</svg>`;}
+
+const CATEGORY_GROUPS = [
+  {group:'Traditional / Regional', icon:'leaf', items:['Golden Panadi','Mango Patch','Lakshmi Pendant Style','Rani Haar Base','Temple Coin Patch']},
+  {group:'Crystal & Beads', icon:'bead', items:['Golden Ball','Moti (Pearls)','Crystal','Loreal & Ghungroo','Seed Beads (Mix)','Rhinestone Cup Chain']},
+  {group:'Kundan', icon:'gem', items:['Peacock Kundan','Stone Kundan','Polki Kundan','Meena Kundan','Moti Kundan','Rose Kundan','Antique Kundan']},
+  {group:'AD Kundan', icon:'diamond', items:['American Diamond','Fitting Stone','AD Bangle Stone']},
+  {group:'Fancy Kundan', icon:'flower', items:['Lotus Kundan','Chandra Kundan','Hair Brooch','Animal Kundan','Butterfly Kundan']},
+  {group:'Pendant', icon:'drop', items:['Hook Pendant','Traditional Pendant','Chandbali Pendant']},
+  {group:'Chains & Dori', icon:'chain', items:['Pearl Chain','Golden Chain','Gonda','Mangalsutra Chain Set','Rani Haar Chain','Silver Dori']},
+  {group:'Wire & Tar', icon:'coil', items:['Gauge Wire','Wrapping Wire']},
+  {group:'Jewellery Findings', icon:'tool', items:['Basic Essentials','Tool Kit','Holder','Hook & Pins','Jump Rings','Earring Backs']},
+  {group:'Accessories', icon:'watch', items:['Base','Watch Dial','Jhumka Base','Bangle Base']},
+];
+
+const PACK_OPTIONS = [
+  {label:'1 Pc', mult:1},
+  {label:'3 Pc', mult:2.8},
+  {label:'6 Pc', mult:5.3},
+  {label:'12 Pc', mult:10},
+];
+const ROLL_OPTIONS = [
+  {label:'1 Meter', mult:1},
+  {label:'5 Meter', mult:4.5},
+  {label:'10 Meter', mult:8.5},
+  {label:'25 Meter', mult:20},
+];
+const SIZE_OPTIONS = [
+  {label:'4mm', mult:0.85},
+  {label:'6mm', mult:1},
+  {label:'8mm', mult:1.2},
+  {label:'10mm', mult:1.45},
+];
+const COLOR_SETS = {
+  goldSilver:[{name:'Gold',hex:'#B8842E'},{name:'Silver',hex:'#C9CDD3'}],
+  meena:[{name:'Gold',hex:'#B8842E'},{name:'Rani Pink',hex:'#C2185B'},{name:'Green',hex:'#2E4A3B'},{name:'Multicolor',hex:'linear-gradient(90deg,#B8842E,#C2185B,#2E4A3B)'}],
+  pearlIvory:[{name:'Ivory',hex:'#F3E9D2'},{name:'Cream',hex:'#E9DBB5'}],
+};
+
+let uid = 1;
+function P(name, group, art, colors1, colors2, base1, base2, basePrice, opts={}){
+  return {
+    id: uid++,
+    name, group, parentGroup: group, art,
+    c1: colors1, c2: colors2, base1, base2,
+    basePrice,
+    packLabel: opts.packLabel || 'Pack Size',
+    packOptions: opts.fixed ? null : (opts.packOptions || PACK_OPTIONS),
+    sizeOptions: opts.sizeOptions || null,
+    colorOptions: opts.colorOptions || null,
+    fixed: !!opts.fixed,
+    tag: opts.tag || null,
+  };
+}
+
+const FALLBACK_PRODUCTS = [
+  P('Golden Panadi','Traditional / Regional','flat','#B8842E','#8C5A20','#F1E6C9','#E7C878',35,{tag:'New'}),
+  P('Mango Patch','Traditional / Regional','flat','#8C2233','#B8842E','#F3DFA9','#E7C878',42),
+  P('Lakshmi Pendant Style','Traditional / Regional','flat','#B8842E','#6E1423','#F1E6C9','#EFE0BE',65,{}),
+
+  P('Golden Ball','Crystal & Beads','strand','#B8842E','#E7C878','#F3DFA9','#F1E6C9',18,{sizeOptions:SIZE_OPTIONS}),
+  P('Moti (Pearls)','Crystal & Beads','strand','#F3EEDD','#D8C48A','#FFFDF8','#F1E6C9',22,{sizeOptions:SIZE_OPTIONS,colorOptions:COLOR_SETS.pearlIvory}),
+  P('Crystal','Crystal & Beads','strand','#C9CDD3','#B8842E','#F1E6C9','#EFE0BE',26,{sizeOptions:SIZE_OPTIONS,tag:'New'}),
+  P('Loreal & Ghungroo','Crystal & Beads','strand','#B8842E','#8C2233','#F3DFA9','#E7C878',30,{}),
+
+  P('Peacock Kundan','Kundan','cluster','#2E4A3B','#B8842E','#F1E6C9','#E7C878',55,{colorOptions:COLOR_SETS.meena,tag:'Bestseller'}),
+  P('Stone Kundan','Kundan','cluster','#8C2233','#B8842E','#F3DFA9','#F1E6C9',48),
+  P('Polki Kundan','Kundan','cluster','#F3EEDD','#B8842E','#FFFDF8','#F1E6C9',72,{}),
+  P('Meena Kundan','Kundan','cluster','#2E4A3B','#C2185B','#F1E6C9','#E7C878',60,{colorOptions:COLOR_SETS.meena}),
+  P('Moti Kundan','Kundan','cluster','#F3EEDD','#D8C48A','#FFFDF8','#F1E6C9',50),
+
+  P('American Diamond','AD Kundan','cluster','#C9CDD3','#FFFFFF','#F1E6C9','#EFE0BE',68,{sizeOptions:SIZE_OPTIONS,tag:'New'}),
+  P('Fitting Stone','AD Kundan','cluster','#B8842E','#C9CDD3','#F3DFA9','#F1E6C9',40),
+
+  P('Lotus Kundan','Fancy Kundan','cluster','#C2185B','#B8842E','#F1E6C9','#E7C878',58),
+  P('Chandra Kundan','Fancy Kundan','cluster','#B8842E','#F3EEDD','#F3DFA9','#FFFDF8',54),
+  P('Hair Brooch','Fancy Kundan','flat','#8C2233','#B8842E','#F1E6C9','#E7C878',120,{packOptions:null,fixed:true}),
+  P('Animal Kundan','Fancy Kundan','cluster','#2E4A3B','#B8842E','#F1E6C9','#EFE0BE',62),
+
+  P('Hook Pendant','Pendant','flat','#B8842E','#6E1423','#F3DFA9','#F1E6C9',45),
+  P('Traditional Pendant','Pendant','flat','#8C2233','#B8842E','#F1E6C9','#E7C878',80),
+
+  P('Pearl Chain','Chains & Dori','strand','#F3EEDD','#D8C48A','#FFFDF8','#F1E6C9',95,{packLabel:'Length',packOptions:ROLL_OPTIONS}),
+  P('Golden Chain','Chains & Dori','strand','#B8842E','#E7C878','#F3DFA9','#F1E6C9',110,{packLabel:'Length',packOptions:ROLL_OPTIONS,tag:'Bestseller'}),
+  P('Gonda','Chains & Dori','strand','#8C2233','#B8842E','#F1E6C9','#E7C878',38,{colorOptions:COLOR_SETS.meena}),
+  P('Mangalsutra Chain Set','Chains & Dori','strand','#1C2F26','#B8842E','#F1E6C9','#EFE0BE',150,{fixed:true}),
+
+  P('Gauge Wire','Wire & Tar','strand','#B8842E','#8C5A20','#F3DFA9','#F1E6C9',28,{packLabel:'Length',packOptions:ROLL_OPTIONS,colorOptions:COLOR_SETS.goldSilver}),
+  P('Wrapping Wire','Wire & Tar','strand','#C9CDD3','#B8842E','#F1E6C9','#E7C878',24,{packLabel:'Length',packOptions:ROLL_OPTIONS,colorOptions:COLOR_SETS.goldSilver}),
+
+  P('Basic Essentials','Jewellery Findings','flat','#B8842E','#6E1423','#F1E6C9','#E7C878',15),
+  P('Tool Kit','Jewellery Findings','flat','#1C2F26','#B8842E','#EFE0BE','#F1E6C9',276,{fixed:true,tag:'New'}),
+  P('Holder','Jewellery Findings','flat','#8C5A20','#B8842E','#F3DFA9','#F1E6C9',32),
+  P('Hook & Pins','Jewellery Findings','flat','#B8842E','#8C2233','#F1E6C9','#E7C878',12),
+
+  P('Base','Accessories','flat','#B8842E','#6E1423','#F3DFA9','#F1E6C9',20,{colorOptions:COLOR_SETS.goldSilver}),
+  P('Watch Dial','Accessories','flat','#8C2233','#B8842E','#F1E6C9','#E7C878',55),
+  P('Jhumka Base','Accessories','flat','#B8842E','#2E4A3B','#F1E6C9','#EFE0BE',48,{tag:'Bestseller'}),
+
+  /* ============ NEWLY ADDED PRODUCTS ============ */
+  P('Rani Haar Base','Traditional / Regional','cluster','#B8842E','#C2185B','#F1E6C9','#E7C878',88,{tag:'New'}),
+  P('Temple Coin Patch','Traditional / Regional','flat','#B8842E','#8C5A20','#F3DFA9','#EFE0BE',50),
+
+  P('Seed Beads (Mix)','Crystal & Beads','strand','#C2185B','#2E4A3B','#F1E6C9','#F3DFA9',16,{sizeOptions:SIZE_OPTIONS,colorOptions:COLOR_SETS.meena}),
+  P('Rhinestone Cup Chain','Crystal & Beads','strand','#C9CDD3','#B8842E','#F1E6C9','#EFE0BE',34,{packLabel:'Length',packOptions:ROLL_OPTIONS,tag:'New'}),
+
+  P('Rose Kundan','Kundan','cluster','#C2185B','#B8842E','#F3DFA9','#F1E6C9',56,{colorOptions:COLOR_SETS.meena}),
+  P('Antique Kundan','Kundan','cluster','#8C5A20','#B8842E','#EFE0BE','#F1E6C9',64,{tag:'Bestseller'}),
+
+  P('AD Bangle Stone','AD Kundan','cluster','#C9CDD3','#B8842E','#F1E6C9','#FFFFFF',52,{sizeOptions:SIZE_OPTIONS}),
+
+  P('Butterfly Kundan','Fancy Kundan','cluster','#2E4A3B','#C2185B','#F1E6C9','#E7C878',59,{tag:'New'}),
+
+  P('Chandbali Pendant','Pendant','flat','#B8842E','#8C2233','#F3DFA9','#F1E6C9',70),
+
+  P('Rani Haar Chain','Chains & Dori','strand','#B8842E','#6E1423','#F1E6C9','#E7C878',130,{packLabel:'Length',packOptions:ROLL_OPTIONS,tag:'Bestseller'}),
+  P('Silver Dori','Chains & Dori','strand','#C9CDD3','#FFFFFF','#F1E6C9','#EFE0BE',85,{packLabel:'Length',packOptions:ROLL_OPTIONS,colorOptions:COLOR_SETS.goldSilver}),
+
+  P('Jump Rings','Jewellery Findings','flat','#B8842E','#8C5A20','#F1E6C9','#E7C878',10,{sizeOptions:SIZE_OPTIONS}),
+  P('Earring Backs','Jewellery Findings','flat','#8C2233','#B8842E','#F3DFA9','#F1E6C9',14),
+
+  P('Bangle Base','Accessories','flat','#B8842E','#2E4A3B','#F1E6C9','#E7C878',60,{colorOptions:COLOR_SETS.goldSilver,tag:'New'}),
+];
+
+/* ============================================================
+   LIVE CATALOG — synced from the same Firebase project the
+   Warehouse dashboard (script.js) writes to, under collection
+   "jsk-creation", document "items". Add/edit/delete an item in
+   the Warehouse and it appears here automatically (real time).
+   Until the first real item arrives, FALLBACK_PRODUCTS above is
+   shown so the page is never empty.
+   ============================================================ */
+const firebaseConfig = {
+  apiKey: "AIzaSyAP1W9aEd6alEs-3Ac2s36ecRT6sIkzkFs",
+  authDomain: "jsk-creation.firebaseapp.com",
+  projectId: "jsk-creation",
+  storageBucket: "jsk-creation.firebasestorage.app",
+  messagingSenderId: "682729907422",
+  appId: "1:682729907422:web:7a2b9a127ef70a4e0e8e4f",
+  measurementId: "G-1QGH1N1EMR",
+};
+const FIRESTORE_COLLECTION = "jsk-creation";
+const LS_CACHE_KEY = "jsk-creation:items";
+
+/* Warehouse "Website Category" slugs -> this site's richer group taxonomy,
+   used only as a fallback before the live category list (managed from the
+   Warehouse's Categories tab) has synced. */
+const CAT_TO_GROUP = {
+  tulip: 'Traditional / Regional',
+  moon: 'Pendant',
+  lotus: 'Fancy Kundan',
+  kundan: 'Kundan',
+  'ghanthan-mala': 'Chains & Dori',
+  connectors: 'Jewellery Findings',
+  minakari: 'Accessories',
+  chains: 'Chains & Dori',
+  stones: 'Crystal & Beads',
+};
+
+/* ============================================================
+   LIVE CATEGORIES — synced from the same Firestore doc the
+   Warehouse's Categories tab reads/writes ("categories"). Add,
+   rename, or delete a category in the Warehouse and this site's
+   Shop By Category menu + product grouping updates to match,
+   in real time, with no code changes needed here. */
+let LIVE_CATEGORIES = null; // [{id,label,parentId}, ...] once synced
+function groupForCat(catId){
+  if(LIVE_CATEGORIES && LIVE_CATEGORIES.length){
+    const found = LIVE_CATEGORIES.find(c => c.id === catId);
+    if(found) return found.label;
+  }
+  return CAT_TO_GROUP[catId] || 'Traditional / Regional';
+}
+/* the label of the top-level category a product's own category sits
+   under (itself, if it has no parent) — lets a click on a parent
+   category in the mega menu pull in everything from its sub-categories */
+function parentGroupForCat(catId){
+  if(LIVE_CATEGORIES && LIVE_CATEGORIES.length){
+    const found = LIVE_CATEGORIES.find(c => c.id === catId);
+    if(found){
+      if(found.parentId){
+        const parent = LIVE_CATEGORIES.find(c => c.id === found.parentId);
+        if(parent) return parent.label;
+      }
+      return found.label;
+    }
+  }
+  return CAT_TO_GROUP[catId] || 'Traditional / Regional';
+}
+/* deterministic "nice enough" look for a category that has no
+   hand-picked art/tint set below (i.e. any category the admin
+   adds later on from the Warehouse) */
+const FALLBACK_TINT_SETS = [
+  ['#B8842E','#8C5A20','#F1E6C9','#E7C878'],
+  ['#8C2233','#B8842E','#F3DFA9','#F1E6C9'],
+  ['#2E4A3B','#B8842E','#F1E6C9','#E7C878'],
+  ['#C9CDD3','#B8842E','#F1E6C9','#EFE0BE'],
+  ['#C2185B','#B8842E','#F1E6C9','#E7C878'],
+];
+function tintForGroup(group){
+  if(GROUP_TINTS[group]) return GROUP_TINTS[group];
+  let h = 0; for(let i=0;i<group.length;i++) h = (h*31 + group.charCodeAt(i)) >>> 0;
+  return FALLBACK_TINT_SETS[h % FALLBACK_TINT_SETS.length];
+}
+function artTypeForGroup(group){ return GROUP_ART_TYPE[group] || 'flat'; }
+const CATEGORY_ICON_CYCLE = ['leaf','bead','gem','diamond','flower','drop','chain','coil','tool','watch'];
+function iconForCategoryIndex(idx){ return CATEGORY_ICON_CYCLE[idx % CATEGORY_ICON_CYCLE.length]; }
+const GROUP_ART_TYPE = { 'Kundan':'cluster','AD Kundan':'cluster','Fancy Kundan':'cluster','Crystal & Beads':'strand','Chains & Dori':'strand','Wire & Tar':'strand','Traditional / Regional':'flat','Jewellery Findings':'flat','Pendant':'flat','Accessories':'flat' };
+const GROUP_TINTS = {
+  'Kundan':['#2E4A3B','#B8842E','#F1E6C9','#E7C878'],
+  'AD Kundan':['#C9CDD3','#FFFFFF','#F1E6C9','#EFE0BE'],
+  'Fancy Kundan':['#C2185B','#B8842E','#F1E6C9','#E7C878'],
+  'Crystal & Beads':['#B8842E','#E7C878','#F3DFA9','#F1E6C9'],
+  'Chains & Dori':['#B8842E','#6E1423','#F1E6C9','#E7C878'],
+  'Wire & Tar':['#B8842E','#8C5A20','#F3DFA9','#F1E6C9'],
+  'Traditional / Regional':['#B8842E','#8C5A20','#F1E6C9','#E7C878'],
+  'Jewellery Findings':['#B8842E','#6E1423','#F1E6C9','#E7C878'],
+  'Pendant':['#B8842E','#6E1423','#F3DFA9','#F1E6C9'],
+  'Accessories':['#B8842E','#2E4A3B','#F1E6C9','#E7C878'],
+};
+function hashId(str){
+  let h = 0;
+  for(let i=0;i<str.length;i++){ h = (h*31 + str.charCodeAt(i)) >>> 0; }
+  return h || 1;
+}
+/* Turns one Warehouse inventory item into this site's product shape.
+   Warehouse items look like: {id, name, img, images, qty, price, unit,
+   unitLabel, cat, desc, sku, listing, packOptions, sizeOptions, colorOptions}
+   packOptions/sizeOptions come from the Warehouse as [{label, price}] (an
+   absolute Rs. price per option); this site's pricing engine works off a
+   multiplier of the base price, so we convert here. */
+function toProduct(raw){
+  const group = groupForCat(raw.cat);
+  const parentGroup = parentGroupForCat(raw.cat);
+  const tint = tintForGroup(group);
+  const images = Array.isArray(raw.images) && raw.images.length
+    ? raw.images.filter(Boolean)
+    : (raw.img ? [raw.img] : []);
+  const stock = Number(raw.qty) || 0;
+  const basePrice = Number(raw.price) || 0;
+  let tag = null;
+  if(stock <= 0) tag = 'Out of Stock';
+  else if(raw.listing === 'prebook') tag = 'Pre-Order';
+  else if(raw.trending) tag = 'Trending';
+
+  const toMultOptions = (arr) => (Array.isArray(arr) && arr.length)
+    ? arr.map(o => ({ label: o.label, mult: basePrice > 0 ? (Number(o.price)||0) / basePrice : 1 }))
+    : null;
+  let packOptions = toMultOptions(raw.packOptions);
+  const sizeOptions = toMultOptions(raw.sizeOptions);
+  const colorOptions = (Array.isArray(raw.colorOptions) && raw.colorOptions.length)
+    ? raw.colorOptions.map(c => ({ name: c.name, hex: c.hex }))
+    : null;
+  // Every card should always show a pack-size style dropdown — even a plain
+  // item with no Warehouse-defined pack/size/colour options — so it always
+  // looks like "1 Pc ▾" the way it did before, instead of skipping straight
+  // to a bare Add to Cart button.
+  if(!packOptions && !sizeOptions && !colorOptions){
+    const unitTag = (raw.unitLabel && raw.unitLabel.trim()) || raw.unit || 'pc';
+    packOptions = [{ label: `1 ${unitTag}`, mult: 1 }];
+  } else if(!packOptions && (sizeOptions || colorOptions)) {
+    packOptions = [{ label:'Standard', mult:1 }];
+  }
+
+  return {
+    id: hashId(String(raw.id)),
+    rawId: raw.id,
+    name: raw.name || 'Untitled item',
+    trending: !!raw.trending,
+    group, parentGroup, art: artTypeForGroup(group),
+    c1: tint[0], c2: tint[1], base1: tint[2], base2: tint[3],
+    basePrice,
+    packLabel: 'Pack Size', packOptions, sizeOptions, colorOptions,
+    fixed: false, tag, images, stock,
+    sku: raw.sku || '', desc: raw.desc || '',
+    unitText: (raw.unitLabel && raw.unitLabel.trim()) || null,
+    listing: raw.listing === 'prebook' ? 'prebook' : 'catalog',
+  };
+}
+
+let PRODUCTS = FALLBACK_PRODUCTS;
+let catalogHasRealItems = false;
+
+let _fbPromise = null;
+function getFirebase(){
+  if(!_fbPromise){
+    _fbPromise = (async () => {
+      const appMod = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js");
+      const fsMod = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js");
+      const app = appMod.initializeApp(firebaseConfig);
+      const db = fsMod.getFirestore(app);
+      return { app, db, fsMod };
+    })();
+  }
+  return _fbPromise;
+}
+
+let lastRawItems = null;
+function applyCatalog(items){
+  lastRawItems = Array.isArray(items) ? items : null;
+  if(!lastRawItems || lastRawItems.length === 0){
+    catalogHasRealItems = false;
+    PRODUCTS = FALLBACK_PRODUCTS;
+  } else {
+    catalogHasRealItems = true;
+    PRODUCTS = lastRawItems.map(toProduct);
+  }
+  try { renderMegaMenu(); } catch(e){ console.error('Mega menu failed to render:', e); }
+  renderAll();
+}
+
+async function startCatalogSync(){
+  try {
+    const cached = localStorage.getItem(LS_CACHE_KEY);
+    if(cached){ applyCatalog(JSON.parse(cached)); }
+  } catch(e){}
+  try {
+    const { db, fsMod } = await getFirebase();
+    const ref = fsMod.doc(db, FIRESTORE_COLLECTION, "items");
+    fsMod.onSnapshot(ref, (snap) => {
+      if(!snap.exists()) return;
+      const items = Array.isArray(snap.data().value) ? snap.data().value : [];
+      try { localStorage.setItem(LS_CACHE_KEY, JSON.stringify(items)); } catch(e){}
+      applyCatalog(items);
+    }, (err) => {
+      console.error("Catalog live sync failed, showing fallback catalog:", err);
+    });
+  } catch(e){
+    console.error("Could not connect catalog to warehouse, showing fallback catalog:", e);
+  }
+}
+
+const LS_CATEGORY_CACHE_KEY = "jsk-creation:categories";
+async function startCategorySync(){
+  try {
+    const cached = localStorage.getItem(LS_CATEGORY_CACHE_KEY);
+    if(cached){
+      const cats = JSON.parse(cached);
+      if(Array.isArray(cats) && cats.length){ LIVE_CATEGORIES = cats; renderMegaMenu(); }
+    }
+  } catch(e){}
+  try {
+    const { db, fsMod } = await getFirebase();
+    const ref = fsMod.doc(db, FIRESTORE_COLLECTION, "categories");
+    fsMod.onSnapshot(ref, (snap) => {
+      if(!snap.exists()) return;
+      const cats = Array.isArray(snap.data().value) ? snap.data().value : [];
+      if(!cats.length) return;
+      LIVE_CATEGORIES = cats;
+      try { localStorage.setItem(LS_CATEGORY_CACHE_KEY, JSON.stringify(cats)); } catch(e){}
+      // categories changed (renamed/added/removed) — regroup the catalog
+      // that's already loaded so cards, filters and the mega menu match
+      if(lastRawItems && lastRawItems.length){
+        catalogHasRealItems = true;
+        PRODUCTS = lastRawItems.map(toProduct);
+      }
+      try { renderMegaMenu(); } catch(e){ console.error('Mega menu failed to render:', e); }
+      renderAll();
+    }, (err) => {
+      console.error("Category live sync failed, using defaults:", err);
+    });
+  } catch(e){
+    console.error("Could not connect categories to warehouse, using defaults:", e);
+  }
+}
+
+/* ============================================================
+   PRICE HELPERS
+   ============================================================ */
+function priceRange(p){
+  if(p.fixed || !p.packOptions){
+    return [p.basePrice, p.basePrice];
+  }
+  const packMults = p.packOptions.map(o=>o.mult);
+  const sizeMults = p.sizeOptions ? p.sizeOptions.map(o=>o.mult) : [1];
+  const min = p.basePrice * Math.min(...packMults) * Math.min(...sizeMults);
+  const max = p.basePrice * Math.max(...packMults) * Math.max(...sizeMults);
+  return [min, max];
+}
+function fmt(n){ return 'Rs.' + n.toFixed(2); }
+function currentPrice(p, packIdx, sizeIdx){
+  const packMult = p.packOptions ? p.packOptions[packIdx].mult : 1;
+  const sizeMult = p.sizeOptions ? p.sizeOptions[sizeIdx].mult : 1;
+  return p.basePrice * packMult * sizeMult;
+}
+
+/* ============================================================
+   RATINGS
+   ============================================================ */
+function ratingFor(id){
+  // Deterministic pseudo-rating per product so it stays stable across re-renders
+  const seed = (id * 9301 + 49297) % 233280;
+  const rand = seed / 233280;
+  const rating = Math.round((3.6 + rand * 1.4) * 10) / 10; // 3.6 - 5.0
+  const reviews = 8 + Math.floor(rand * 180);
+  return { rating, reviews };
+}
+function starsHtml(rating){
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  let out = '';
+  for(let i=0;i<5;i++){
+    if(i < full){
+      out += '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
+    } else if(i === full && half){
+      out += '<svg viewBox="0 0 24 24"><defs><linearGradient id="half' + i + rating + '"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path fill="url(#half' + i + rating + ')" stroke="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
+    } else {
+      out += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
+    }
+  }
+  return out;
+}
+
+/* ============================================================
+   WISHLIST
+   ============================================================ */
+const wishlist = new Set();
+function toggleWishlist(id, btn){
+  if(wishlist.has(id)){
+    wishlist.delete(id);
+    if(btn) btn.classList.remove('wishlisted');
+    showToast('Removed from wishlist', 'ok');
+  } else {
+    wishlist.add(id);
+    if(btn) btn.classList.add('wishlisted');
+    showToast('Added to wishlist', 'ok');
+  }
+}
+
+/* ============================================================
+   ART RENDER — real product photography (Pexels, free-to-use)
+   ============================================================ */
+const GROUP_IMAGES = {
+  'Crystal & Beads': [1590159, 9671928, 1331705, 1331700, 18609428, 36931458],
+  'Kundan': [6716445, 36536669, 9173459, 10877350],
+  'AD Kundan': [6716445, 36536669],
+  'Fancy Kundan': [9173459, 10877350, 6716445],
+  'Chains & Dori': [7679824, 12194383, 12194264, 12194265, 10816570, 10581731],
+  'Wire & Tar': [17264228, 15059762],
+  'Traditional / Regional': [9173459, 12194343, 21235048],
+  'Jewellery Findings': [17264228, 12194383],
+  'Pendant': [21235048, 4595723],
+  'Accessories': [4974342, 4974343, 7743156],
+};
+function imgFor(p, idx){
+  if(p.images && p.images.length){
+    return p.images[(idx||0) % p.images.length];
+  }
+  const arr = GROUP_IMAGES[p.group] || GROUP_IMAGES['Crystal & Beads'];
+  const id = arr[p.id % arr.length];
+  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600`;
+}
+function artHtml(p, extraClass, idx){
+  return `<div class="product-art ${extraClass||''}" style="--base1:${p.base1};--base2:${p.base2};"><img src="${imgFor(p,idx)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></div>`;
+}
+
+
+/* ============================================================
+   MEGA MENU RENDER — rebuilt every time the live category list
+   or the live product catalog changes, so it always reflects
+   whatever categories are set up in the Warehouse right now.
+   ============================================================ */
+const megaPanel = document.getElementById('megaPanel');
+function renderMegaMenu(){
+  const cats = (LIVE_CATEGORIES && LIVE_CATEGORIES.length)
+    ? LIVE_CATEGORIES
+    : CATEGORY_GROUPS.map(g => ({ id: null, label: g.group, parentId: null }));
+  const topCats = cats.filter(c => !c.parentId);
+  megaPanel.style.gridTemplateColumns = `repeat(${Math.max(1, Math.min(topCats.length, 5))}, max-content)`;
+  megaPanel.innerHTML = topCats.map((c, idx) => {
+    const group = c.label;
+    const subCats = cats.filter(sc => sc.parentId === c.id);
+    let itemsHtml;
+    if(subCats.length){
+      itemsHtml = `<li><a href="#all-products" data-filter="${group}"><strong>All ${group}</strong></a></li>` +
+        subCats.map(sc => `<li><a href="#all-products" data-filter="${sc.label}">${sc.label}</a></li>`).join('');
+    } else {
+      const names = [...new Set(PRODUCTS.filter(p => p.group === group).map(p => p.name))].slice(0, 8);
+      itemsHtml = names.length
+        ? names.map(n => `<li><a href="#all-products" data-filter="${group}">${n}</a></li>`).join('')
+        : `<li><a href="#all-products" data-filter="${group}">View all</a></li>`;
+    }
+    return `
+    <div class="mega-col">
+      <h5>${ic(iconForCategoryIndex(idx),'ic')} ${group}</h5>
+      <ul>${itemsHtml}</ul>
+    </div>`;
+  }).join('') + `<div class="mega-col mega-view-all"><a href="#categories" id="megaViewAllLink">View All Categories →</a></div>`;
+  const megaViewAllLinkEl = document.getElementById('megaViewAllLink');
+  if(megaViewAllLinkEl){
+    megaViewAllLinkEl.addEventListener('click', (e)=>{ e.preventDefault(); openCategoriesPage(); });
+  }
+  renderCategoriesPage();
+}
+renderMegaMenu();
+
+/* ============================================================
+   ALL CATEGORIES PAGE — every category as a chip sized to its
+   own text (no stretched / equal-width cells), grouped exactly
+   like the mega menu so it always matches the live category list.
+   ============================================================ */
+function renderCategoriesPage(){
+  const wrap = document.getElementById('categoriesGroups');
+  if(!wrap) return;
+  const cats = (LIVE_CATEGORIES && LIVE_CATEGORIES.length)
+    ? LIVE_CATEGORIES
+    : CATEGORY_GROUPS.map(g => ({ id: null, label: g.group, parentId: null }));
+  const topCats = cats.filter(c => !c.parentId);
+  wrap.innerHTML = topCats.map((c, idx) => {
+    const group = c.label;
+    const subCats = cats.filter(sc => sc.parentId === c.id);
+    let chipsHtml;
+    if(subCats.length){
+      chipsHtml = `<a href="#all-products" class="cat-chip cat-chip-all" data-filter="${group}">All ${group}</a>` +
+        subCats.map(sc => `<a href="#all-products" class="cat-chip" data-filter="${sc.label}">${sc.label}</a>`).join('');
+    } else {
+      const names = [...new Set(PRODUCTS.filter(p => p.group === group).map(p => p.name))].slice(0, 14);
+      chipsHtml = `<a href="#all-products" class="cat-chip cat-chip-all" data-filter="${group}">All ${group}</a>` +
+        names.map(n => `<a href="#all-products" class="cat-chip" data-filter="${group}">${n}</a>`).join('');
+    }
+    return `
+    <div class="cat-group">
+      <h5>${ic(iconForCategoryIndex(idx),'ic')} ${group}</h5>
+      <div class="cat-group-chips">${chipsHtml}</div>
+    </div>`;
+  }).join('');
+}
+renderCategoriesPage();
+
+/* mobile: tap a category header to expand/collapse just that group */
+megaPanel.addEventListener('click', (e)=>{
+  const h5 = e.target.closest('h5');
+  if(h5 && window.matchMedia('(max-width:720px)').matches){
+    h5.parentElement.classList.toggle('cat-open');
+  }
+});
+
+/* ============================================================
+   TRENDING SCROLL (New Arrivals-ish selection) + category filters
+   ============================================================ */
+function trendTileHtml(p){
+  return `
+  <div class="trend-tile" data-filter="${p.group}">
+    ${p.tag?`<span class="badge-tag">${p.tag}</span>`:''}
+    <div class="art">${artHtml(p)}</div>
+    <p>${p.name}</p>
+  </div>`;
+}
+function getTrendPicks(group){
+  if(!group || group==='All'){
+    const seen = new Set(), picks = [];
+    // 1) items the admin explicitly pinned as Trending, in the order they were added
+    PRODUCTS.filter(p=>p.trending).forEach(p=>{
+      if(picks.length<8){ picks.push(p); seen.add(p.group); }
+    });
+    // 2) then one item per remaining group that has some other badge (New/Bestseller demo tag)
+    PRODUCTS.filter(p=>p.tag && !p.trending).forEach(p=>{
+      if(picks.length<8 && !seen.has(p.group)){ picks.push(p); seen.add(p.group); }
+    });
+    // 3) fill any remaining slots for variety across categories
+    PRODUCTS.forEach(p=>{
+      if(picks.length<8 && !seen.has(p.group)){ picks.push(p); seen.add(p.group); }
+    });
+    return picks;
+  }
+  return PRODUCTS.filter(p=>p.group===group || p.parentGroup===group).slice(0,8);
+}
+function renderTrendingScroll(group){
+  document.getElementById('trendingScroll').innerHTML = getTrendPicks(group).map(trendTileHtml).join('');
+}
+
+/* ============================================================
+   PRE-BOOKING GRID
+   ============================================================ */
+function renderSeasonalGrid(){
+  const named = ['Loreal & Ghungroo','Golden Chain','Meena Kundan','Gonda'];
+  let picks = catalogHasRealItems
+    ? PRODUCTS.filter(p=>p.listing==='prebook').slice(0,8)
+    : named.map(n=>PRODUCTS.find(p=>p.name===n)).filter(Boolean);
+  const grid = document.getElementById('seasonalGrid');
+  grid.innerHTML = picks.length
+    ? picks.map(p=>renderCard(p)).join('')
+    : `<p style="grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:20px 0;">No pre-booking items right now — check back soon.</p>`;
+  attachCardListeners(grid);
+}
+
+function renderAll(){
+  // each section is isolated — if one throws (e.g. a bad category/product
+  // shape), the rest of the page still renders instead of the whole page
+  // silently going blank until something else (like Load More) happens
+  // to call renderGrid() again on its own.
+  try { renderTrendingScroll('All'); } catch(e){ console.error('Trending row failed to render:', e); }
+  try { renderSeasonalGrid(); } catch(e){ console.error('Pre-booking row failed to render:', e); }
+  visibleCount = PAGE_SIZE;
+  try { renderGrid(); } catch(e){ console.error('Product grid failed to render:', e); }
+  try { renderCart(); } catch(e){ console.error('Cart failed to render:', e); }
+}
+
+/* ============================================================
+   PRODUCT CARD RENDER
+   ============================================================ */
+function summaryText(p, packIdx, sizeIdx, colorIdx){
+  const parts = [];
+  if(p.packOptions) parts.push(p.packOptions[packIdx].label);
+  if(p.sizeOptions) parts.push(p.sizeOptions[sizeIdx].label);
+  if(p.colorOptions) parts.push(p.colorOptions[colorIdx].name);
+  return parts.join(', ') || 'Standard';
+}
+
+function renderCard(p){
+  const [min,max] = priceRange(p);
+  const priceLabel = (p.fixed || min===max) ? fmt(min) : `${fmt(min)} - ${fmt(max)}`;
+  const {rating, reviews} = ratingFor(p.id);
+  const hasVariants = !!(p.packOptions || p.sizeOptions || p.colorOptions);
+
+  const packChips = p.packOptions ? `
+    <div class="variant-group">
+      <label>${p.packLabel}</label>
+      <div class="chip-row" data-role="pack-chips">
+        ${p.packOptions.map((o,i)=>`<button type="button" class="chip ${i===0?'active':''}" data-idx="${i}">${o.label}</button>`).join('')}
+      </div>
+    </div>` : '';
+  const sizeChips = p.sizeOptions ? `
+    <div class="variant-group">
+      <label>Size</label>
+      <div class="chip-row" data-role="size-chips">
+        ${p.sizeOptions.map((o,i)=>`<button type="button" class="chip ${i===0?'active':''}" data-idx="${i}">${o.label}</button>`).join('')}
+      </div>
+    </div>` : '';
+  const colorChips = p.colorOptions ? `
+    <div class="variant-group">
+      <label>Colour</label>
+      <div class="chip-row" data-role="color-chips">
+        ${p.colorOptions.map((c,i)=>`<button type="button" class="chip ${i===0?'active':''}" data-idx="${i}" ${i>=3?'style="display:none" data-extra="1"':''}><span class="dot" style="background:${c.hex}"></span>${c.name}</button>`).join('')}
+        ${p.colorOptions.length>3?`<button type="button" class="chip-more" data-role="color-more">+${p.colorOptions.length-3}</button>`:''}
+      </div>
+    </div>` : '';
+
+  const variantControl = hasVariants ? `
+    <div class="variant-control">
+      <button type="button" class="variant-summary" data-role="vsummary">
+        <span class="vsummary-text">${summaryText(p,0,0,0)}</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="variant-panel" data-role="vpanel">
+        ${packChips}${sizeChips}${colorChips}
+      </div>
+    </div>` : '';
+
+  return `
+  <div class="card" data-pid="${p.id}" data-group="${p.group}" data-pack-idx="0" data-size-idx="0" data-color-idx="0">
+    <div class="card-media">
+      ${p.tag?`<span class="badge-tag">${p.tag}</span>`:''}
+      <div class="media-actions">
+        <button class="media-btn wishlist-btn ${wishlist.has(p.id)?'wishlisted':''}" data-pid="${p.id}" aria-label="Add to wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </button>
+      </div>
+      <button class="quick-view-btn" data-pid="${p.id}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        Quick View
+      </button>
+      ${artHtml(p)}
+    </div>
+    <div class="card-body">
+      <h3 class="card-name clickable" data-pid="${p.id}">${p.name}</h3>
+      <div class="rating-row">
+        <span class="stars">${starsHtml(rating)}</span>
+        <span>${rating.toFixed(1)} (${reviews})</span>
+      </div>
+      <div class="card-price">
+        <span class="from">${p.fixed?'Price':'Starting from'}</span>
+        <span class="price-val">${priceLabel}</span>
+      </div>
+      ${variantControl}
+      <button class="add-btn" data-pid="${p.id}">
+        <span class="spinner"></span>
+        <span class="lbl">Add to Cart</span>
+      </button>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   ALL PRODUCTS GRID + LOAD MORE
+   ============================================================ */
+const PAGE_SIZE = 12;
+let visibleCount = PAGE_SIZE;
+let activeFilter = null;
+let searchTerm = '';
+
+function filteredProducts(){
+  return PRODUCTS.filter(p=>{
+    const matchesFilter = !activeFilter || p.group === activeFilter || p.parentGroup === activeFilter;
+    const matchesSearch = !searchTerm || p.name.toLowerCase().includes(searchTerm) || p.group.toLowerCase().includes(searchTerm);
+    return matchesFilter && matchesSearch;
+  });
+}
+function renderGrid(){
+  const list = filteredProducts();
+  const shown = list.slice(0, visibleCount);
+  document.getElementById('productGrid').innerHTML = shown.length
+    ? shown.map(renderCard).join('')
+    : `<p style="grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:40px 0;">No products match your search. Try a different keyword.</p>`;
+  document.getElementById('loadMoreBtn').style.display = visibleCount < list.length ? 'inline-flex' : 'none';
+  attachCardListeners(document.getElementById('productGrid'));
+}
+document.getElementById('loadMoreBtn').addEventListener('click', ()=>{
+  visibleCount += PAGE_SIZE;
+  renderGrid();
+});
+
+/* filter clicks: mega menu items, discovery tiles, trending tiles */
+document.addEventListener('click', (e)=>{
+  const filterEl = e.target.closest('[data-filter]');
+  if(filterEl){
+    e.preventDefault();
+    activeFilter = filterEl.getAttribute('data-filter');
+    visibleCount = PAGE_SIZE;
+    renderGrid();
+    if(document.getElementById('categoriesPage').classList.contains('open')) closeCategoriesPage();
+    document.getElementById('all-products').scrollIntoView({behavior:'smooth'});
+    closeMobileNav();
+  }
+});
+
+/* ============================================================
+   CARD VARIANT + ADD-TO-CART LOGIC
+   ============================================================ */
+function attachCardListeners(root){
+  root = root || document;
+  root.querySelectorAll('.card').forEach(card=>{
+    const pid = Number(card.getAttribute('data-pid'));
+    const product = PRODUCTS.find(p=>p.id===pid);
+    const priceVal = card.querySelector('.price-val');
+    const summaryBtn = card.querySelector('[data-role="vsummary"]');
+    const summaryTextEl = card.querySelector('.vsummary-text');
+    const panel = card.querySelector('[data-role="vpanel"]');
+    const packChips = card.querySelectorAll('[data-role="pack-chips"] .chip');
+    const sizeChips = card.querySelectorAll('[data-role="size-chips"] .chip');
+    const colorChips = card.querySelectorAll('[data-role="color-chips"] .chip');
+    const colorMoreBtn = card.querySelector('[data-role="color-more"]');
+
+    // clicking anywhere on the card opens the product — except the controls
+    // that need to do their own thing (add to cart, wishlist, variant picker)
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e)=>{
+      if(e.target.closest('.add-btn, .wishlist-btn, .quick-view-btn, .variant-control, .media-actions')) return;
+      openProductDetail(pid);
+    });
+
+    function state(){
+      return {
+        packIdx: Number(card.getAttribute('data-pack-idx')) || 0,
+        sizeIdx: Number(card.getAttribute('data-size-idx')) || 0,
+        colorIdx: Number(card.getAttribute('data-color-idx')) || 0,
+      };
+    }
+    function updateSummary(){
+      const s = state();
+      if(summaryTextEl) summaryTextEl.textContent = summaryText(product, s.packIdx, s.sizeIdx, s.colorIdx);
+    }
+    function updatePrice(){
+      if(product.fixed || !product.packOptions) return;
+      const s = state();
+      priceVal.textContent = fmt(currentPrice(product, s.packIdx, s.sizeIdx));
+    }
+
+    if(summaryBtn){
+      summaryBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        const isOpen = panel.classList.toggle('open');
+        summaryBtn.classList.toggle('open', isOpen);
+      });
+    }
+    packChips.forEach(chip=>{
+      chip.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        card.setAttribute('data-pack-idx', chip.getAttribute('data-idx'));
+        packChips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        updatePrice(); updateSummary();
+      });
+    });
+    sizeChips.forEach(chip=>{
+      chip.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        card.setAttribute('data-size-idx', chip.getAttribute('data-idx'));
+        sizeChips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        updatePrice(); updateSummary();
+      });
+    });
+    colorChips.forEach(chip=>{
+      chip.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        card.setAttribute('data-color-idx', chip.getAttribute('data-idx'));
+        colorChips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        updateSummary();
+      });
+    });
+    if(colorMoreBtn){
+      colorMoreBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        card.querySelectorAll('[data-extra="1"]').forEach(c=>{ c.style.display = 'inline-flex'; });
+        colorMoreBtn.style.display = 'none';
+      });
+    }
+  });
+
+  root.querySelectorAll('.wishlist-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      toggleWishlist(Number(btn.getAttribute('data-pid')), btn);
+    });
+  });
+  root.querySelectorAll('.quick-view-btn, .card-name.clickable').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      openProductDetail(Number(el.getAttribute('data-pid')));
+    });
+  });
+
+  root.querySelectorAll('.add-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      if(btn.classList.contains('loading')) return;
+      const card = btn.closest('.card');
+      const pid = Number(btn.getAttribute('data-pid'));
+      const product = PRODUCTS.find(p=>p.id===pid);
+      const packIdx = Number(card.getAttribute('data-pack-idx')) || 0;
+      const sizeIdx = Number(card.getAttribute('data-size-idx')) || 0;
+      const colorIdx = Number(card.getAttribute('data-color-idx')) || 0;
+      const price = product.fixed ? product.basePrice : currentPrice(product, packIdx, sizeIdx);
+
+      const variantLabel = [
+        product.packOptions ? product.packOptions[packIdx].label : null,
+        product.sizeOptions ? product.sizeOptions[sizeIdx].label : null,
+        product.colorOptions ? product.colorOptions[colorIdx].name : null,
+      ].filter(Boolean).join(' · ');
+
+      btn.classList.add('loading');
+      setTimeout(()=>{
+        btn.classList.remove('loading');
+        addToCart(product, variantLabel || 'Standard', price);
+        showToast(`Added "${product.name}" to cart`, 'ok');
+      }, 550);
+    });
+  });
+}
+
+/* ============================================================
+   CART
+   ============================================================ */
+let cart = [];
+function cartKey(product, variantLabel){ return product.id + '::' + variantLabel; }
+
+function addToCart(product, variantLabel, price){
+  const key = cartKey(product, variantLabel);
+  const existing = cart.find(c=>c.key===key);
+  if(existing){
+    existing.qty += 1;
+  } else {
+    cart.push({key, product, variantLabel, price, qty:1});
+  }
+  renderCart();
+  openCart();
+}
+function updateQty(key, delta){
+  const line = cart.find(c=>c.key===key);
+  if(!line) return;
+  line.qty += delta;
+  if(line.qty <= 0){
+    cart = cart.filter(c=>c.key!==key);
+    showToast('Item removed from cart', 'ok');
+  } else {
+    showToast('Quantity updated', 'ok');
+  }
+  renderCart();
+}
+function removeLine(key){
+  cart = cart.filter(c=>c.key!==key);
+  showToast('Item removed from cart', 'ok');
+  renderCart();
+}
+function renderCart(){
+  const itemsEl = document.getElementById('cartItems');
+  const countEl = document.getElementById('cartCount');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const totalQty = cart.reduce((s,c)=>s+c.qty,0);
+  countEl.textContent = totalQty;
+
+  if(cart.length===0){
+    itemsEl.innerHTML = `<div class="cart-empty">Your cart is empty.<br>Browse the collection and add your first pack.</div>`;
+  } else {
+    itemsEl.innerHTML = cart.map(line=>`
+      <div class="cart-line" data-key="${line.key}">
+        <div class="thumb product-art" data-art="${line.product.art}" style="--c1:${line.product.c1};--c2:${line.product.c2};--base1:${line.product.base1};--base2:${line.product.base2};"></div>
+        <div class="info">
+          <h6>${line.product.name}</h6>
+          <p class="meta">${line.variantLabel}</p>
+          <div class="qty-ctrl">
+            <button data-act="dec" data-key="${line.key}" aria-label="Decrease quantity">−</button>
+            <span>${line.qty}</span>
+            <button data-act="inc" data-key="${line.key}" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+          <span class="line-price">${fmt(line.price*line.qty)}</span>
+          <button class="line-remove" data-act="remove" data-key="${line.key}" aria-label="Remove item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+  const subtotal = cart.reduce((s,c)=>s+c.price*c.qty,0);
+  subtotalEl.textContent = fmt(subtotal);
+}
+document.getElementById('cartItems').addEventListener('click',(e)=>{
+  const btn = e.target.closest('[data-act]');
+  if(!btn) return;
+  const key = btn.getAttribute('data-key');
+  const act = btn.getAttribute('data-act');
+  if(act==='inc') updateQty(key, 1);
+  if(act==='dec') updateQty(key, -1);
+  if(act==='remove') removeLine(key);
+});
+
+/* cart drawer open/close */
+const overlay = document.getElementById('overlay');
+const cartDrawer = document.getElementById('cartDrawer');
+function openCart(){ overlay.classList.add('open'); cartDrawer.classList.add('open'); }
+function closeCart(){ overlay.classList.remove('open'); cartDrawer.classList.remove('open'); }
+document.getElementById('cartToggle').addEventListener('click', openCart);
+document.getElementById('cartClose').addEventListener('click', closeCart);
+document.getElementById('continueBtn').addEventListener('click', closeCart);
+overlay.addEventListener('click', closeCart);
+/* ============================================================
+   CHECKOUT — writes the order straight to the "orders" collection
+   in the same Firebase project the Warehouse dashboard listens to
+   live, then notifies via the same Cloudflare Worker (Resend) the
+   first website uses.
+   ============================================================ */
+const ORDER_EMAIL_WORKER_URL = "https://jsk-order-email.talrejasubhash23.workers.dev";
+const ORDER_EMAIL_SHARED_SECRET = "ac33450b2993ddfc42ad648b0aedc7b3";
+
+async function sendOrderEmail(order){
+  try {
+    await fetch(ORDER_EMAIL_WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Shared-Secret": ORDER_EMAIL_SHARED_SECRET },
+      body: JSON.stringify({ orderId: order.id, order: order }),
+    });
+  } catch(e){ console.warn("Order email failed to send:", e); }
+}
+
+function buildOrderPayload(customer){
+  let total = 0;
+  const lines = cart.map(line=>{
+    const lineTotal = line.price * line.qty;
+    total += lineTotal;
+    return {
+      itemId: line.product.rawId || String(line.product.id),
+      name: line.product.name,
+      qty: line.qty,
+      price: line.price,
+      variant: line.variantLabel,
+      preorder: line.product.listing === 'prebook',
+    };
+  });
+  return {
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+    customer,
+    lines,
+    total,
+    hasPreorder: lines.some(l=>l.preorder),
+  };
+}
+
+async function submitOrder(customer){
+  const order = buildOrderPayload(customer);
+  const { db, fsMod } = await getFirebase();
+  let ref;
+  try {
+    ref = await fsMod.addDoc(fsMod.collection(db, 'orders'), order);
+  } catch(e){
+    console.error(
+      'Writing the order to Firestore failed — if this is a permission-denied ' +
+      'error, the "orders" collection\'s Security Rules need to allow "create" ' +
+      'for anyone (not just signed-in staff), otherwise no order from a ' +
+      'customer will ever be saved:',
+      e && e.code, e
+    );
+    throw e;
+  }
+  order.id = ref.id;
+  sendOrderEmail(order);
+  return order;
+}
+
+function renderCheckoutSummary(){
+  const itemsEl = document.getElementById('checkoutItems');
+  itemsEl.innerHTML = cart.map(line=>`
+    <div class="checkout-line">
+      <div class="thumb product-art" data-art="${line.product.art}" style="--c1:${line.product.c1};--c2:${line.product.c2};--base1:${line.product.base1};--base2:${line.product.base2};"></div>
+      <div class="info">
+        <h6>${line.product.name}</h6>
+        <p class="meta">${line.variantLabel} &middot; Qty ${line.qty}</p>
+      </div>
+      <span class="price">${fmt(line.price*line.qty)}</span>
+    </div>
+  `).join('');
+  document.getElementById('checkoutTotal').textContent = document.getElementById('cartSubtotal').textContent;
+}
+
+const checkoutPage = document.getElementById('checkoutPage');
+function openCheckoutPage(){
+  renderCheckoutSummary();
+  closeCart();
+  checkoutPage.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCheckoutPage(){
+  checkoutPage.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+  if(cart.length===0){ showToast('Your cart is empty', 'error'); return; }
+  openCheckoutPage();
+});
+document.getElementById('checkoutBackBtn').addEventListener('click', closeCheckoutPage);
+
+let _orderSubmitting = false;
+document.getElementById('placeOrderBtn').addEventListener('click', async ()=>{
+  if(_orderSubmitting || cart.length===0) return;
+  const customer = {
+    name: document.getElementById('custName').value.trim(),
+    phone: document.getElementById('custPhone').value.trim(),
+    address: document.getElementById('custAddress').value.trim(),
+    city: document.getElementById('custCity').value.trim(),
+    notes: document.getElementById('custNotes').value.trim(),
+  };
+  const errEl = document.getElementById('checkoutError');
+  if(!customer.name || !customer.phone || !customer.address || !customer.city){
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  const btn = document.getElementById('placeOrderBtn');
+  _orderSubmitting = true;
+  btn.disabled = true;
+  btn.textContent = 'Placing order…';
+  try {
+    const order = await submitOrder(customer);
+    cart = [];
+    renderCart();
+    closeCheckoutPage();
+    showToast(`Order placed! Reference: ${order.id.slice(-8).toUpperCase()}`, 'ok');
+  } catch(e){
+    console.error('Order submit failed:', e);
+    errEl.textContent = 'Could not place order. Please try again.';
+    errEl.style.display = 'block';
+  } finally {
+    _orderSubmitting = false;
+    btn.disabled = false;
+    btn.textContent = 'Confirm Order';
+  }
+});
+
+/* ============================================================
+   TOASTS
+   ============================================================ */
+function showToast(msg, type){
+  const stack = document.getElementById('toastStack');
+  const t = document.createElement('div');
+  t.className = 'toast' + (type==='error' ? ' error' : '');
+  t.innerHTML = (type==='error'
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>') + `<span>${msg}</span>`;
+  stack.appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(10px)'; t.style.transition='all .25s'; setTimeout(()=>t.remove(),260); }, 2600);
+}
+
+/* ============================================================
+   PRODUCT DETAIL MODAL (full product session)
+   ============================================================ */
+let pdpState = { productId:null, packIdx:0, sizeIdx:0, colorIdx:0, qty:1, thumbIdx:0 };
+
+function openProductDetail(id, opts={}){
+  pdpState = { productId:id, packIdx:0, sizeIdx:0, colorIdx:0, qty:1, thumbIdx:0 };
+  renderPDP();
+  document.getElementById('pdpPage').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('pdpPage').scrollTop = 0;
+  if(!opts.skipHash){
+    history.pushState({ pdp:id }, '', '#product-' + id);
+  }
+}
+function closeProductDetail(opts={}){
+  document.getElementById('pdpPage').classList.remove('open');
+  document.body.style.overflow = '';
+  if(!opts.skipHash && location.hash.startsWith('#product-')){
+    history.pushState({}, '', location.pathname + location.search + '#top');
+  }
+}
+window.addEventListener('popstate', ()=>{
+  const m = location.hash.match(/^#product-(\d+)$/);
+  if(m){
+    openProductDetail(Number(m[1]), {skipHash:true});
+  } else {
+    closeProductDetail({skipHash:true});
+  }
+  if(location.hash === '#categories'){
+    openCategoriesPage({skipHash:true});
+  } else {
+    closeCategoriesPage({skipHash:true});
+  }
+});
+window.addEventListener('DOMContentLoaded', ()=>{
+  const m = location.hash.match(/^#product-(\d+)$/);
+  if(m && PRODUCTS.some(p=>p.id===Number(m[1]))){
+    openProductDetail(Number(m[1]), {skipHash:true});
+  }
+  if(location.hash === '#categories'){
+    openCategoriesPage({skipHash:true});
+  }
+});
+
+/* ============================================================
+   ALL CATEGORIES — FULL PAGE (open/close)
+   ============================================================ */
+function openCategoriesPage(opts={}){
+  renderCategoriesPage();
+  document.getElementById('categoriesPage').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('categoriesPage').scrollTop = 0;
+  if(!opts.skipHash){
+    history.pushState({categories:true}, '', '#categories');
+  }
+  closeMobileNav();
+}
+function closeCategoriesPage(opts={}){
+  document.getElementById('categoriesPage').classList.remove('open');
+  document.body.style.overflow = '';
+  if(!opts.skipHash && location.hash === '#categories'){
+    history.pushState({}, '', location.pathname + location.search + '#top');
+  }
+}
+document.getElementById('categoriesBackBtn').addEventListener('click', ()=>closeCategoriesPage());
+document.getElementById('shopByCategoryLink').addEventListener('click', (e)=>{
+  e.preventDefault();
+  openCategoriesPage();
+});
+const viewAllCategoriesLinkEl = document.getElementById('viewAllCategoriesLink');
+if(viewAllCategoriesLinkEl){
+  viewAllCategoriesLinkEl.addEventListener('click', (e)=>{
+    e.preventDefault();
+    openCategoriesPage();
+  });
+}
+
+function pdpCurrentPrice(p){
+  if(p.fixed || !p.packOptions) return p.basePrice;
+  return currentPrice(p, pdpState.packIdx, pdpState.sizeIdx);
+}
+
+function renderPDP(){
+  const p = PRODUCTS.find(x=>x.id===pdpState.productId);
+  if(!p) return;
+  const {rating, reviews} = ratingFor(p.id);
+  const [min,max] = priceRange(p);
+  const priceLabel = (p.fixed || min===max) ? fmt(pdpCurrentPrice(p)) : fmt(pdpCurrentPrice(p));
+
+  const hasRealPhotos = !!(p.images && p.images.length);
+  const thumbCount = hasRealPhotos ? p.images.length : 4;
+  const thumbs = Array.from({length:thumbCount}).map((_,i)=>`
+    <div class="pdp-thumb ${i===pdpState.thumbIdx?'active':''}" data-thumb="${i}" ${hasRealPhotos ? '' : `style="filter:hue-rotate(${i*6}deg) saturate(${100+i*6}%);"`}>
+      ${artHtml(p, '', i)}
+    </div>`).join('');
+
+  const packPills = p.packOptions ? `
+    <div class="pdp-block">
+      <label>${p.packLabel}</label>
+      <div class="pill-row" data-role="pdp-pack">
+        ${p.packOptions.map((o,i)=>`<button class="pill ${i===pdpState.packIdx?'active':''}" data-idx="${i}">${o.label}</button>`).join('')}
+      </div>
+    </div>` : '';
+  const sizePills = p.sizeOptions ? `
+    <div class="pdp-block">
+      <label>Stone Size</label>
+      <div class="pill-row" data-role="pdp-size">
+        ${p.sizeOptions.map((o,i)=>`<button class="pill ${i===pdpState.sizeIdx?'active':''}" data-idx="${i}">${o.label}</button>`).join('')}
+      </div>
+    </div>` : '';
+  const colorPills = p.colorOptions ? `
+    <div class="pdp-block">
+      <label>Colour</label>
+      <div class="pdp-color-row" data-role="pdp-color">
+        ${p.colorOptions.map((c,i)=>`<span class="color-dot ${i===pdpState.colorIdx?'active':''}" data-idx="${i}" title="${c.name}" style="background:${c.hex}"></span>`).join('')}
+      </div>
+    </div>` : '';
+
+  const related = PRODUCTS.filter(x=>x.group===p.group && x.id!==p.id).slice(0,4);
+  const relatedHtml = related.length ? `
+    <div class="related-section">
+      <h4>You May Also Like</h4>
+      <div class="related-grid">${related.map(renderCard).join('')}</div>
+    </div>` : '';
+
+  document.getElementById('pdpCard').innerHTML = `
+    <div class="pdp-body">
+      <div class="pdp-gallery">
+        <div class="pdp-main-art">${artHtml(p, '', 0)}</div>
+        <div class="pdp-thumbs">${thumbs}</div>
+      </div>
+      <div class="pdp-info">
+        <div class="pdp-breadcrumb"><a href="#top" data-pdp-nav="home">Home</a> / <a href="#all-products" data-pdp-nav="${p.group}">${p.group}</a> / ${p.name}</div>
+        <span class="pdp-cat">${p.group}</span>
+        <h2>${p.name}</h2>
+        <div class="rating-row pdp-rating">
+          <span class="stars">${starsHtml(rating)}</span>
+          <span>${rating.toFixed(1)} · ${reviews} reviews</span>
+        </div>
+        <div class="pdp-price" id="pdpPrice">${priceLabel}</div>
+        <p class="pdp-desc">${p.desc || ''}</p>
+        ${packPills}
+        ${sizePills}
+        ${colorPills}
+        <div class="pdp-qty-row">
+          <div class="qty-ctrl">
+            <button data-pdp-qty="dec" aria-label="Decrease quantity">−</button>
+            <span id="pdpQty">${pdpState.qty}</span>
+            <button data-pdp-qty="inc" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="add-btn pdp-add-btn" id="pdpAddBtn">
+            <span class="spinner"></span>
+            <span class="lbl">Add to Cart</span>
+          </button>
+        </div>
+        <ul class="pdp-meta-list">
+          <li><strong>Category:</strong> ${p.group}</li>
+          <li><strong>Availability:</strong> In stock, dispatched T+1</li>
+          <li><strong>Shipping:</strong> Nationwide across Pakistan, damage-safe packaging</li>
+        </ul>
+      </div>
+    </div>
+    ${relatedHtml}
+  `;
+
+  bindPDPEvents(p);
+  attachCardListeners(document.getElementById('pdpCard'));
+}
+
+function bindPDPEvents(p){
+  document.getElementById('pdpBackBtn').onclick = ()=>closeProductDetail();
+
+  document.querySelectorAll('.pdp-thumb').forEach(t=>{
+    t.addEventListener('click', ()=>{
+      pdpState.thumbIdx = Number(t.getAttribute('data-thumb'));
+      document.querySelectorAll('.pdp-thumb').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      const mainArt = document.querySelector('.pdp-main-art');
+      if(p.images && p.images.length){
+        const img = mainArt.querySelector('img');
+        if(img) img.src = imgFor(p, pdpState.thumbIdx);
+        mainArt.style.filter = '';
+      } else {
+        mainArt.style.filter = t.style.filter;
+      }
+    });
+  });
+
+  const packRow = document.querySelector('[data-role="pdp-pack"]');
+  if(packRow) packRow.querySelectorAll('.pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      pdpState.packIdx = Number(btn.getAttribute('data-idx'));
+      packRow.querySelectorAll('.pill').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pdpPrice').textContent = fmt(pdpCurrentPrice(p));
+    });
+  });
+  const sizeRow = document.querySelector('[data-role="pdp-size"]');
+  if(sizeRow) sizeRow.querySelectorAll('.pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      pdpState.sizeIdx = Number(btn.getAttribute('data-idx'));
+      sizeRow.querySelectorAll('.pill').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pdpPrice').textContent = fmt(pdpCurrentPrice(p));
+    });
+  });
+  const colorRow = document.querySelector('[data-role="pdp-color"]');
+  if(colorRow) colorRow.querySelectorAll('.color-dot').forEach(dot=>{
+    dot.addEventListener('click', ()=>{
+      pdpState.colorIdx = Number(dot.getAttribute('data-idx'));
+      colorRow.querySelectorAll('.color-dot').forEach(d=>d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
+
+  document.querySelector('[data-pdp-qty="dec"]').addEventListener('click', ()=>{
+    if(pdpState.qty > 1){ pdpState.qty -= 1; document.getElementById('pdpQty').textContent = pdpState.qty; }
+  });
+  document.querySelector('[data-pdp-qty="inc"]').addEventListener('click', ()=>{
+    pdpState.qty += 1; document.getElementById('pdpQty').textContent = pdpState.qty;
+  });
+
+  document.getElementById('pdpAddBtn').addEventListener('click', ()=>{
+    const btn = document.getElementById('pdpAddBtn');
+    if(btn.classList.contains('loading')) return;
+    const price = pdpCurrentPrice(p);
+    const colorName = p.colorOptions ? p.colorOptions[pdpState.colorIdx].name : null;
+    const variantLabel = [
+      p.packOptions ? p.packOptions[pdpState.packIdx].label : null,
+      p.sizeOptions ? p.sizeOptions[pdpState.sizeIdx].label : null,
+      colorName,
+    ].filter(Boolean).join(' · ');
+    btn.classList.add('loading');
+    setTimeout(()=>{
+      btn.classList.remove('loading');
+      for(let i=0;i<pdpState.qty;i++){ addToCart(p, variantLabel || 'Standard', price); }
+      showToast(`Added "${p.name}" to cart`, 'ok');
+    }, 550);
+  });
+
+  document.querySelectorAll('[data-pdp-nav]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const nav = a.getAttribute('data-pdp-nav');
+      closeProductDetail();
+      if(nav !== 'home'){ activeFilter = nav; visibleCount = PAGE_SIZE; renderGrid(); }
+      setTimeout(()=>document.getElementById(nav==='home'?'top':'all-products').scrollIntoView({behavior:'smooth'}), 200);
+    });
+  });
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape' && document.getElementById('pdpPage').classList.contains('open')) closeProductDetail();
+  if(e.key === 'Escape' && document.getElementById('categoriesPage').classList.contains('open')) closeCategoriesPage();
+});
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+const searchToggle = document.getElementById('searchToggle');
+const searchBox = document.getElementById('searchBox');
+const searchInput = document.getElementById('searchInput');
+searchToggle.addEventListener('click', ()=>{
+  searchBox.classList.toggle('open');
+  if(searchBox.classList.contains('open')) searchInput.focus();
+});
+searchInput.addEventListener('input', (e)=>{
+  searchTerm = e.target.value.trim().toLowerCase();
+  activeFilter = null;
+  visibleCount = PAGE_SIZE;
+  renderGrid();
+});
+searchInput.addEventListener('keydown', (e)=>{
+  if(e.key==='Enter'){ document.getElementById('all-products').scrollIntoView({behavior:'smooth'}); }
+});
+
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+const navToggle = document.getElementById('navToggle');
+const navRow = document.getElementById('navRow');
+const navOverlay = document.getElementById('navOverlay');
+function openMobileNav(){
+  navRow.classList.add('open');
+  navOverlay.classList.add('open');
+  navToggle.classList.add('active');
+  navToggle.setAttribute('aria-expanded','true');
+}
+function closeMobileNav(){
+  navRow.classList.remove('open');
+  navOverlay.classList.remove('open');
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded','false');
+}
+navToggle.addEventListener('click', ()=>{
+  if(navRow.classList.contains('open')) closeMobileNav(); else openMobileNav();
+});
+navOverlay.addEventListener('click', closeMobileNav);
+document.querySelectorAll('.nav-item > .nav-link').forEach(link=>{
+  if(link.id === 'shopByCategoryLink') return; // handled separately: always opens the full Categories page
+  link.addEventListener('click',(e)=>{
+    if(!window.matchMedia('(max-width:720px)').matches) return;
+    const panel = link.parentElement.querySelector('.mega-panel');
+    if(panel){
+      e.preventDefault();
+      link.parentElement.classList.toggle('mobile-expanded');
+    }
+  });
+});
+
+/* ============================================================
+   NEWSLETTER + FOOTER TOASTS
+   ============================================================ */
+document.getElementById('newsletterForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  e.target.reset();
+  showToast('Subscribed! Watch your inbox for restocks.', 'ok');
+});
+document.getElementById('waChannelBtn').addEventListener('click',(e)=>{
+  e.preventDefault();
+  showToast('WhatsApp channel link coming soon', 'ok');
+});
+document.querySelectorAll('[data-toast]').forEach(a=>{
+  a.addEventListener('click',(e)=>{
+    e.preventDefault();
+    showToast(a.getAttribute('data-toast'), 'ok');
+  });
+});
+const aboutLinkEl = document.getElementById('aboutLink');
+if(aboutLinkEl){
+  aboutLinkEl.addEventListener('click',(e)=>{
+    e.preventDefault();
+    showToast('JSK Creation — supplying karigars across Pakistan since day one.', 'ok');
+  });
+}
+
+/* ============================================================
+   STICKY HEADER SHADOW
+   ============================================================ */
+const siteHeader = document.getElementById('siteHeader');
+function updateHeaderShadow(){
+  siteHeader.classList.toggle('is-scrolled', window.scrollY > 4);
+}
+window.addEventListener('scroll', updateHeaderShadow, {passive:true});
+updateHeaderShadow();
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape' && navRow.classList.contains('open')) closeMobileNav();
+});
+
+/* ============================================================
+   HERO SLIDER
+   ============================================================ */
+const heroSlideEls = document.querySelectorAll('.hero-slide');
+const heroDotsWrap = document.getElementById('heroDots');
+let heroIdx = 0;
+let heroTimer = null;
+
+heroSlideEls.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+  dot.addEventListener('click', () => { goToHeroSlide(i); restartHeroTimer(); });
+  heroDotsWrap.appendChild(dot);
+});
+const heroDotEls = heroDotsWrap.querySelectorAll('.slide-dot');
+
+function goToHeroSlide(i){
+  heroIdx = (i + heroSlideEls.length) % heroSlideEls.length;
+  heroSlideEls.forEach((s, idx) => s.classList.toggle('active', idx === heroIdx));
+  heroDotEls.forEach((d, idx) => d.classList.toggle('active', idx === heroIdx));
+}
+function startHeroTimer(){ heroTimer = setInterval(() => goToHeroSlide(heroIdx + 1), 6800); }
+function restartHeroTimer(){ clearInterval(heroTimer); startHeroTimer(); }
+
+document.getElementById('heroPrev').addEventListener('click', () => { goToHeroSlide(heroIdx - 1); restartHeroTimer(); });
+document.getElementById('heroNext').addEventListener('click', () => { goToHeroSlide(heroIdx + 1); restartHeroTimer(); });
+
+const heroSliderEl = document.getElementById('heroSlider');
+heroSliderEl.addEventListener('mouseenter', () => clearInterval(heroTimer));
+heroSliderEl.addEventListener('mouseleave', startHeroTimer);
+
+// basic swipe support
+let heroTouchStartX = null;
+heroSliderEl.addEventListener('touchstart', (e) => { heroTouchStartX = e.touches[0].clientX; }, {passive:true});
+heroSliderEl.addEventListener('touchend', (e) => {
+  if(heroTouchStartX === null) return;
+  const diff = e.changedTouches[0].clientX - heroTouchStartX;
+  if(Math.abs(diff) > 40){ goToHeroSlide(heroIdx + (diff < 0 ? 1 : -1)); restartHeroTimer(); }
+  heroTouchStartX = null;
+}, {passive:true});
+
+startHeroTimer();
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderAll();
+startCatalogSync();
+startCategorySync();
+</script>
+</body>
+</html>
